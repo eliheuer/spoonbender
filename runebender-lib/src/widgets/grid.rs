@@ -153,12 +153,12 @@ impl Widget<GridGlyph> for GridInner {
         ]);
 
         let glyph_rect: Rect = geom - Insets::uniform(5.0);
-        let rounded = glyph_rect.to_rounded_rect(5.0);
+        let rounded = glyph_rect.to_rounded_rect(9.0);
         ctx.fill(rounded, &env.get(theme::GLYPH_GRID_CELL_BACKGROUND_COLOR));
         ctx.stroke(rounded, &env.get(theme::GLYPH_GRID_CELL_OUTLINE_COLOR), 2.0);
         if ctx.is_active() || data.is_selected {
             ctx.fill(rounded, &env.get(theme::FOCUS_BACKGROUND_COLOR));
-            ctx.stroke(rounded, &env.get(theme::FOCUS_OUTLINE_COLOR), 4.0);
+            ctx.stroke(rounded, &env.get(theme::FOCUS_OUTLINE_COLOR), 3.0);
         }
         let glyph_color = if data.is_placeholder {
             env.get(theme::PLACEHOLDER_GLYPH_COLOR)

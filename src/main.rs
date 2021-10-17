@@ -12,7 +12,7 @@ fn main() {
     let state = get_initial_state();
 
     let main_window = WindowDesc::new(make_ui())
-        .title(LocalizedString::new("Runebender"))
+        .title(LocalizedString::new("Spoonbender"))
         .menu(menus::make_menu)
         .window_size(Size::new(900.0, 800.0));
 
@@ -39,17 +39,17 @@ fn make_ui() -> impl Widget<AppState> {
         format!("{} {}", data.info.family_name, data.info.style_name)
     });
 
-    let button = Button::new("(edit)").on_click(|ctx, _data, _env| {
-        let cmd = ModalHost::make_modal_command(crate::widgets::font_info);
-        ctx.submit_command(cmd);
-    });
+    //let button = Button::new("(edit)").on_click(|ctx, _data, _env| {
+    //    let cmd = ModalHost::make_modal_command(crate::widgets::font_info);
+    //    ctx.submit_command(cmd);
+    //});
 
     let main_view = Flex::column()
         .with_child(
             Flex::row()
                 .with_child(label)
                 .with_spacer(8.0)
-                .with_child(button)
+                //.with_child(button)
                 .padding(5.0)
                 .center()
                 .fix_height(40.)
