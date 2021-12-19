@@ -9,7 +9,7 @@ use std::str::FromStr;
 
 const GLYPH_NAMES_FILE: &str = "glyph_names_codegen.rs";
 const THEME_PATH_FILE: &str = "theme_path.rs";
-const DEFAULT_THEME_PATH: &str = "resources/default.theme";
+const DEFAULT_THEME_PATH: &str = "resources/dark.theme";
 
 fn main() {
     println!("cargo:rerun-if-env-changed=RB_THEME_PATH");
