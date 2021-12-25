@@ -13,7 +13,7 @@ fn main() {
 
     let main_window = WindowDesc::new(make_ui())
         .title(LocalizedString::new("Spoonbender"))
-        .menu(menus::make_menu)
+        //.menu(menus::make_menu)
         .window_size(Size::new(900.0, 800.0));
 
     AppLauncher::with_window(main_window)
@@ -58,7 +58,7 @@ fn make_ui() -> impl Widget<AppState> {
         )
         .with_flex_child(
             Flex::row()
-                .with_child(Sidebar::new().fix_width(180.))
+                //.with_child(Sidebar::new().fix_width(180.))
                 .with_flex_child(Scroll::new(GlyphGrid::new()).vertical().expand_width(), 1.0),
             1.,
         );
