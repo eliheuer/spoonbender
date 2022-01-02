@@ -234,8 +234,8 @@ impl Workspace {
         Arc::make_mut(&mut self.previews).insert(
             id,
             PreviewSession {
-                text: "Hamburgler".to_string().into(),
-                font_size: DEFAULT_PREVIEW_FONT_SIZE,
+                text: "REGEN DEGEN REN GEN REG RR GG".to_string().into(),
+                font_size: 128.0,
             },
         );
         id

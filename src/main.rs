@@ -35,9 +35,9 @@ fn make_ui() -> impl Widget<AppState> {
         ctx.stroke(line, &env.get(theme::SIDEBAR_EDGE_STROKE), 1.0);
     });
 
-    let label = Label::new(|data: &Workspace, _: &Env| {
-        format!("{} {}", data.info.family_name, data.info.style_name)
-    });
+    //let label = Label::new(|data: &Workspace, _: &Env| {
+    //    format!("{} {}", data.info.family_name, data.info.style_name)
+    //});
 
     //let button = Button::new("(edit)").on_click(|ctx, _data, _env| {
     //    let cmd = ModalHost::make_modal_command(crate::widgets::font_info);
@@ -47,12 +47,12 @@ fn make_ui() -> impl Widget<AppState> {
     let main_view = Flex::column()
         .with_child(
             Flex::row()
-                .with_child(label)
-                .with_spacer(8.0)
+                //.with_child(label)
+                //.with_spacer(8.0)
                 //.with_child(button)
-                .padding(5.0)
+                //.padding(5.0)
                 .center()
-                .fix_height(40.)
+                //.fix_height(40.)
                 .expand_width()
                 .background(hline_painter),
         )

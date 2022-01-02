@@ -10,12 +10,12 @@ use crate::tools::ToolId;
 
 const TOOLBAR_ITEM_SIZE: Size = Size::new(48.0, 48.0);
 const TOOLBAR_ITEM_PADDING: f64 = 2.0;
-const TOOLBAR_ICON_PADDING: f64 = 6.0;
+const TOOLBAR_ICON_PADDING: f64 = 8.0;
 const TOOLBAR_BORDER_STROKE_WIDTH: f64 = 2.0;
 const TOOLBAR_ITEM_STROKE_WIDTH: f64 = 1.5;
 // TODO: move these to theme
-const TOOLBAR_BG_DEFAULT: Color = Color::grey8(0xDD);
-const TOOLBAR_BG_SELECTED: Color = Color::grey8(0xAD);
+const TOOLBAR_BG_DEFAULT: Color = Color::grey8(0x00);
+const TOOLBAR_BG_SELECTED: Color = Color::grey8(0x22);
 
 struct ToolbarItem {
     icon: BezPath,
@@ -51,8 +51,8 @@ impl Toolbar {
                 };
                 let frame = ctx.size().to_rect();
                 ctx.fill(frame, &color);
-                ctx.fill(&icon, &Color::WHITE);
-                ctx.stroke(&icon, &Color::BLACK, TOOLBAR_ITEM_STROKE_WIDTH);
+                ctx.fill(&icon, &Color::BLACK);
+                ctx.stroke(&icon, &Color::WHITE, TOOLBAR_ITEM_STROKE_WIDTH);
             });
 
             let widg = widg.on_click(|ctx, selected, _| {
@@ -145,7 +145,7 @@ impl<T: Data> Widget<T> for Toolbar {
                 (child_frame.min_x() - stroke_inset, child_frame.min_y()),
                 (child_frame.min_x() - stroke_inset, child_frame.max_y()),
             );
-            ctx.stroke(line, &Color::BLACK, TOOLBAR_BORDER_STROKE_WIDTH);
+            ctx.stroke(line, &Color::WHITE, TOOLBAR_BORDER_STROKE_WIDTH);
         }
     }
 }
@@ -194,14 +194,14 @@ impl<T: Data, W: Widget<T>> Widget<T> for FloatingPanel<W> {
             return;
         }
         let frame = ctx.size().to_rect();
-        ctx.blurred_rect(frame + Vec2::new(2.0, 2.0), 4.0, &Color::grey(0.5));
+        //ctx.blurred_rect(frame + Vec2::new(2.0, 2.0), 4.0, &Color::grey(0.5));
         let rounded = frame.to_rounded_rect(5.0);
         ctx.fill(rounded, &TOOLBAR_BG_DEFAULT);
         ctx.with_save(|ctx| {
             ctx.clip(rounded);
             self.inner.paint(ctx, data, env);
         });
-        ctx.stroke(rounded, &Color::BLACK, TOOLBAR_BORDER_STROKE_WIDTH);
+        ctx.stroke(rounded, &Color::WHITE, TOOLBAR_BORDER_STROKE_WIDTH);
     }
 }
 
