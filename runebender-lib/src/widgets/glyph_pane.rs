@@ -64,7 +64,8 @@ fn build_widget() -> impl Widget<EditorState> {
                 .with_child(
                     EditableLabel::parse()
                         .with_font(glyph_font.clone())
-                        .with_text_size(16.0)
+                        .with_text_size(24.0)
+                        .with_text_color(theme::SECONDARY_TEXT_COLOR)
                         .with_text_alignment(druid::TextAlignment::End)
                         .lens(Sidebearings::left)
                         .controller(GlyphPane)
@@ -73,16 +74,17 @@ fn build_widget() -> impl Widget<EditorState> {
                 )
                 .with_child(
                     GlyphPainter::new()
-                        .color(theme::SECONDARY_TEXT_COLOR)
+                        .color(theme::PRIMARY_TEXT_COLOR)
                         .draw_layout_frame(true)
-                        .fix_height(128.0)
+                        .fix_height(256.0)
                         .padding((8.0, 8.0))
                         .lens(EditorState::detail_glyph),
                 )
                 .with_child(
                     EditableLabel::parse()
                         .with_font(glyph_font.clone())
-                        .with_text_size(16.0)
+                        .with_text_size(24.0)
+                        .with_text_color(theme::SECONDARY_TEXT_COLOR)
                         .with_text_alignment(druid::TextAlignment::Start)
                         .lens(Sidebearings::right)
                         .controller(GlyphPane)
@@ -93,7 +95,8 @@ fn build_widget() -> impl Widget<EditorState> {
         .with_child(
             EditableLabel::parse()
                 .with_font(glyph_font.clone())
-                .with_text_size(16.0)
+                .with_text_size(24.0)
+                .with_text_color(theme::SECONDARY_TEXT_COLOR)
                 .with_text_alignment(druid::TextAlignment::Center)
                 .lens(EditorState::detail_glyph.then(GlyphDetail::advance))
                 .fix_width(64.0),
