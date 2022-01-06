@@ -12,14 +12,17 @@ pub struct Measure {
     line: Option<Line>,
 }
 
-const MEASURE_LINE_STROKE_COLOR: Color = Color::rgb8(0x73, 0x9B, 0xCB);
-const MEASURE_INFO_BG_COLOR: Color = Color::rgb8(0x70, 0x70, 0x70);
-const MEASURE_INFO_FG_COLOR: Color = Color::rgb8(0xf8, 0xf8, 0xf8);
-const MEASURE_INFO_ONCURVE_COLOR: Color = Color::rgb8(0x80, 0x80, 0xe0);
-const MEASURE_INFO_OFFCURVE_COLOR: Color = Color::rgb8(0x60, 0xc0, 0x60);
-const MEASURE_INFO_DELTA_COLOR: Color = Color::rgb8(0xa0, 0x20, 0x20);
-const MEASURE_INFO_FONT_SIZE: f64 = 9.0;
-const MEASURE_INTERSECTION_RADIUS: f64 = 3.0;
+// Measure tool
+const MEASURE_LINE_STROKE_COLOR: Color = Color::rgb8(0xff, 0x00, 0x00);
+const MEASURE_INFO_BG_COLOR: Color = Color::rgb8(0x00, 0x00, 0x00);
+const MEASURE_INFO_FG_COLOR: Color = Color::rgb8(0x00, 0xff, 0x00);
+
+// Points coords
+const MEASURE_INFO_ONCURVE_COLOR: Color = Color::rgb8(0x00, 0xff, 0x00);
+const MEASURE_INFO_OFFCURVE_COLOR: Color = Color::rgb8(0x22, 0xff, 0x00);
+const MEASURE_INFO_DELTA_COLOR: Color = Color::rgb8(0x00, 0x66, 0x00);
+const MEASURE_INFO_FONT_SIZE: f64 = 18.0;
+const MEASURE_INTERSECTION_RADIUS: f64 = 8.0;
 
 // Don't report segments smaller than this.
 const MEASURE_FUZZY_TOLERANCE: f64 = 0.1;
@@ -28,12 +31,12 @@ fn draw_info_bubble(ctx: &mut PaintCtx, pos: Point, label: impl Into<String>) {
     let text = ctx.text();
     let layout = text
         .new_text_layout(label.into())
-        .font(FontFamily::SYSTEM_UI, MEASURE_INFO_FONT_SIZE)
+        .font(FontFamily::MONOSPACE, MEASURE_INFO_FONT_SIZE)
         .text_color(MEASURE_INFO_FG_COLOR)
         .build()
         .unwrap();
     let width = layout.size().width;
-    let bubble = Rect::from_center_size(pos, Size::new(width + 6.0, 12.0)).to_rounded_rect(6.0);
+    let bubble = Rect::from_center_size(pos, Size::new(width + 12.0, 24.0)).to_rounded_rect(6.0);
     let origin = pos - Vec2::new(0.5 * width, 6.5);
     ctx.fill(bubble, &MEASURE_INFO_BG_COLOR);
     ctx.draw_text(&layout, origin);
@@ -54,7 +57,7 @@ fn draw_label(ctx: &mut PaintCtx, label: String, pos: Point, color: Color) {
     let text = ctx.text();
     let layout = text
         .new_text_layout(label)
-        .font(FontFamily::SYSTEM_UI, MEASURE_INFO_FONT_SIZE)
+        .font(FontFamily::MONOSPACE, MEASURE_INFO_FONT_SIZE)
         .text_color(color)
         .build()
         .unwrap();
@@ -159,7 +162,7 @@ impl Tool for Measure {
             } else {
                 Vec2::new(-14.0, 8.0)
             };
-            ctx.stroke(line, &MEASURE_LINE_STROKE_COLOR, 1.0);
+            ctx.stroke(line, &MEASURE_LINE_STROKE_COLOR, 4.0);
             let label = format!("{:.1}°", angle);
             draw_info_bubble(ctx, line.p1 + angle_offset, label);
             // TODO: compute earlier than paint
@@ -177,7 +180,7 @@ impl Tool for Measure {
                 for i in 0..intersections.len() - 1 {
                     let t0 = intersections[i];
                     let t1 = intersections[i + 1];
-                    let tmid = 0.5 * (t0 + t1);
+                    let tmid = 0.9 * (t0 + t1);
                     let seg_len = design_len * (t1 - t0);
                     let center = design_line.p0.lerp(design_line.p1, tmid);
                     let center_screen = data.viewport.to_screen(DPoint::from_raw(center));
