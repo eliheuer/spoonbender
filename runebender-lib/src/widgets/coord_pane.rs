@@ -93,17 +93,17 @@ impl Widget<Quadrant> for CoordRepresentationPicker {
         let padding = 8.0;
         let circle_radius = 6.0;
         let rect = frame_size.to_rect().inset(-padding);
-        ctx.stroke(rect, &Color::WHITE, 2.0);
+        ctx.stroke(rect, &Color::WHITE, 1.0);
         for quadrant in Quadrant::all() {
             let pt = quadrant.point_in_rect(rect);
             let color = if data == quadrant {
-                env.get(theme::FOCUS_OUTLINE_COLOR)
+                env.get(theme::SELECTED_POINT_INNER_COLOR)
             } else {
-                env.get(theme::FOCUS_BACKGROUND_COLOR)
+                env.get(theme::OFF_CURVE_POINT_INNER_COLOR)
             };
             let stroke_color = env.get(theme::PATH_FILL_COLOR);
             ctx.fill(Circle::new(pt, circle_radius), &color);
-            ctx.stroke(Circle::new(pt, circle_radius), &stroke_color, 2.0);
+            ctx.stroke(Circle::new(pt, circle_radius), &stroke_color, 1.0);
         }
     }
 }
@@ -126,7 +126,7 @@ fn build_widget() -> impl Widget<CoordinateSelection> {
     );
 
     let coord_label_font: FontDescriptor = FontDescriptor::new(FontFamily::MONOSPACE);
-    let coord_font: FontDescriptor = FontDescriptor::new(FontFamily::MONOSPACE);
+    let _coord_font: FontDescriptor = FontDescriptor::new(FontFamily::MONOSPACE);
 
     let coord_editor = Flex::column()
         .with_child(
@@ -136,16 +136,16 @@ fn build_widget() -> impl Widget<CoordinateSelection> {
                     Label::new("x")
                         .with_font(coord_label_font.clone())
                         .with_text_size(24.0)
-                        .with_text_color(theme::PRIMARY_TEXT_COLOR)
+                        .with_text_color(theme::PATH_FILL_COLOR)
                         .padding((0.0, 0.0, 0.0, 8.0)),
                 )
                 .with_child(
                     EditableLabel::parse()
-                        .with_font(coord_font.clone())
+                        .with_font(coord_label_font.clone())
                         .with_text_size(24.0)
                         .with_text_color(theme::SECONDARY_TEXT_COLOR)
                         .lens(point_x_lens)
-                        .fix_width(64.0)
+                        .fix_width(80.0)
                         .padding((0.0, 0.0, 0.0, 8.0)),
                 ),
         )
@@ -156,15 +156,15 @@ fn build_widget() -> impl Widget<CoordinateSelection> {
                     Label::new("y")
                         .with_font(coord_label_font.clone())
                         .with_text_size(24.0)
-                        .with_text_color(theme::PRIMARY_TEXT_COLOR),
+                        .with_text_color(theme::PATH_FILL_COLOR),
                 )
                 .with_child(
                     EditableLabel::parse()
-                        .with_font(coord_font.clone())
+                        .with_font(coord_label_font.clone())
                         .with_text_size(24.0)
                         .with_text_color(theme::SECONDARY_TEXT_COLOR)
                         .lens(point_y_lens)
-                        .fix_width(64.0),
+                        .fix_width(80.0),
                 ),
         )
         .lens(CoordinateSelection::quadrant_coord);
@@ -178,17 +178,17 @@ fn build_widget() -> impl Widget<CoordinateSelection> {
                         Label::new("w")
                             .with_font(coord_label_font.clone())
                             .with_text_size(24.0)
-                            .with_text_color(theme::PRIMARY_TEXT_COLOR)
+                            .with_text_color(theme::PATH_FILL_COLOR)
                             .padding((8.0, 0.0, 0.0, 8.0)),
                     )
                     .with_spacer(0.0)
                     .with_child(
                         EditableLabel::parse()
-                            .with_font(coord_font.clone())
+                            .with_font(coord_label_font.clone())
                             .with_text_size(24.0)
                             .with_text_color(theme::SECONDARY_TEXT_COLOR)
                             .lens(size_width_lens)
-                            .fix_width(64.0)
+                            .fix_width(80.0)
                             .padding((0.0, 0.0, 0.0, 8.0)),
                     ),
             )
@@ -196,19 +196,19 @@ fn build_widget() -> impl Widget<CoordinateSelection> {
                 Flex::row()
                     .with_child(
                         Label::new("h")
-                            .with_font(coord_label_font)
+                            .with_font(coord_label_font.clone())
                             .with_text_size(24.0)
-                            .with_text_color(theme::PRIMARY_TEXT_COLOR)
+                            .with_text_color(theme::PATH_FILL_COLOR)
                             .padding((8.0, 0.0, 0.0, 0.0)),
                     )
                     .with_spacer(0.0)
                     .with_child(
                         EditableLabel::parse()
-                            .with_font(coord_font.clone())
+                            .with_font(coord_label_font.clone())
                             .with_text_size(24.0)
                             .with_text_color(theme::SECONDARY_TEXT_COLOR)
                             .lens(size_height_lens)
-                            .fix_width(64.0),
+                            .fix_width(80.0),
                     ),
             )
             .lens(CoordinateSelection::quadrant_bbox),
@@ -219,7 +219,7 @@ fn build_widget() -> impl Widget<CoordinateSelection> {
         .with_child(coord_picker)
         .with_child(coord_editor)
         .with_child(bbox_info)
-        .padding(16.0);
+        .padding(8.0);
 
     // if we have any points selected, show the numerical adjust widget, else an empty widget
     Either::new(|d, _| d.count != 0, picker_and_editor, SizedBox::empty())

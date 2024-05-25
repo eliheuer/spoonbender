@@ -2,7 +2,8 @@
 
 use druid::kurbo::Line;
 use druid::{
-    BoxConstraints, Color, Data, Env, Event, EventCtx, LayoutCtx, LifeCycle, LifeCycleCtx,
+//    BoxConstraints, Color, Data, Env, Event, EventCtx, LayoutCtx, LifeCycle, LifeCycleCtx,
+    BoxConstraints, Data, Env, Event, EventCtx, LayoutCtx, LifeCycle, LifeCycleCtx,
     PaintCtx, Rect, RenderContext, Size, UpdateCtx, Widget, WidgetPod,
 };
 
@@ -86,7 +87,7 @@ impl Sidebar {
                     || SizedBox::empty().expand_width().boxed(),
                 )
                 .lens(Workspace::selected_glyph)
-                .background(Color::grey8(0xCC))
+                //.background(Color::grey8(0xCC))
                 .boxed(),
             ),
         }

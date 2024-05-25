@@ -9,7 +9,8 @@ use druid::{
 use druid::kurbo::Line;
 use druid::lens::LensExt;
 use druid::text::format::ParseFormatter;
-use druid::widget::{prelude::*, Flex, Label, Painter, TextBox, WidgetExt};
+use druid::widget::{prelude::*, Flex, Painter, TextBox, WidgetExt};
+//use druid::widget::{prelude::*, Flex, Label, Painter, TextBox, WidgetExt};
 use druid::{FontDescriptor, FontFamily};
 use norad::{GlyphName, Ufo};
 
@@ -133,7 +134,7 @@ fn make_editor(session: &Arc<EditSession>) -> impl Widget<AppState> {
 }
 
 fn make_preview(session: SessionId) -> impl Widget<AppState> {
-    let glyph_font: FontDescriptor = FontDescriptor::new(FontFamily::MONOSPACE);
+    let _glyph_font: FontDescriptor = FontDescriptor::new(FontFamily::MONOSPACE);
     // this is duplicated in main.rs
     let hline_painter = Painter::new(|ctx, _: &PreviewState, env| {
         let rect = ctx.size().to_rect();
@@ -153,7 +154,8 @@ fn make_preview(session: SessionId) -> impl Widget<AppState> {
                     .with_default_spacer()
                     .with_child(
                         TextBox::new()
-                            .with_font(glyph_font.clone())
+                            //TODO: I'm trying to fix a Clippy warn here. - Eli H
+                            //.with_font(glyph_font.clone())
                             .with_text_size(24.0)
                             .with_text_color(theme::SECONDARY_TEXT_COLOR)
                             .with_formatter(ParseFormatter::new())
@@ -162,7 +164,8 @@ fn make_preview(session: SessionId) -> impl Widget<AppState> {
                     .with_default_spacer()
                     .with_flex_child(
                         TextBox::multiline()
-                            .with_font(glyph_font.clone())
+                            //TODO: I'm trying to fix a Clippy warn here. - Eli H
+                            //.with_font(glyph_font.clone())
                             .with_text_size(24.0)
                             .with_text_color(theme::SECONDARY_TEXT_COLOR)
                             .expand_width()
