@@ -15,9 +15,9 @@ fn main() {
     let state = get_initial_state();
 
     let main_window = WindowDesc::new(make_ui())
-        .title(LocalizedString::new("LetraFont"))
+        .title(LocalizedString::new("Spoonbender"))
         .menu(menus::make_menu)
-        .window_size(Size::new(821.0, 512.0));
+        .window_size(Size::new(768.0, 512.0));
 
     AppLauncher::with_window(main_window)
         .delegate(Delegate::default())
