@@ -10,7 +10,7 @@ use druid::{Color, Data, HotKey, KeyEvent, Rect, SysMods, WidgetPod};
 use crate::{consts};
 use crate::tools::ToolId;
 
-const TOOLBAR_ITEM_SIZE: Size = Size::new(48.0, 48.0);
+const TOOLBAR_ITEM_SIZE: Size = Size::new(64.0, 64.0);
 const TOOLBAR_ITEM_PADDING: f64 = 0.0;
 const TOOLBAR_ICON_PADDING: f64 = 8.0;
 const TOOLBAR_BORDER_STROKE_WIDTH: f64 = 1.5;
@@ -270,8 +270,14 @@ impl Default for Toolbar {
             hotkey: HotKey::new(None, "m"),
         };
 
+        let star = ToolbarItem {
+            name: "Star",
+            icon: constrain_path(star_path()),
+            hotkey: HotKey::new(None, "s"),
+        };
+
         Toolbar::new(vec![
-            select, pen, hyperpen, metaball, knife, preview, measure, rectangle, ellipse,
+            select, pen, hyperpen, metaball, knife, preview, measure, rectangle, ellipse, star,
         ])
     }
 }
@@ -570,5 +576,25 @@ fn ellipse_path() -> BezPath {
     bez.curve_to((170.0, 480.0), (220.0, 380.0), (220.0, 240.0));
     bez.curve_to((220.0, 100.0), (170.0, 0.0), (110.0, 0.0));
     bez.close_path();
+    bez
+}
+
+fn star_path() -> BezPath {
+    let mut bez = BezPath::new();
+    
+    // Define the star path here
+    // This is a simple 5-point star. Adjust as needed.
+    bez.move_to((150.0, 0.0));
+    bez.line_to((185.0, 115.0));
+    bez.line_to((300.0, 115.0));
+    bez.line_to((205.0, 185.0));
+    bez.line_to((240.0, 300.0));
+    bez.line_to((150.0, 230.0));
+    bez.line_to((60.0, 300.0));
+    bez.line_to((95.0, 185.0));
+    bez.line_to((0.0, 115.0));
+    bez.line_to((115.0, 115.0));
+    bez.close_path();
+    
     bez
 }

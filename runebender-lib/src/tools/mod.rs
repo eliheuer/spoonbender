@@ -8,6 +8,7 @@ mod preview;
 mod rectangle;
 mod metaball;
 mod select;
+mod star;
 
 pub use ellipse::Ellipse;
 pub use knife::Knife;
@@ -15,6 +16,7 @@ pub use measure::Measure;
 pub use pen::Pen;
 pub use preview::Preview;
 pub use rectangle::Rectangle;
+pub use star::Star;
 pub use metaball::Metaball;
 pub use select::Select;
 
@@ -148,6 +150,7 @@ pub fn tool_for_id(id: ToolId) -> Option<Box<dyn Tool>> {
         "Metaball" => Some(Box::new(Metaball::default())),
         "Select" => Some(Box::new(Select::default())),
         "Rectangle" => Some(Box::new(Rectangle::default())),
+        "Star" => Some(Box::new(Star::default())),
         "Ellipse" => Some(Box::new(Ellipse::default())),
         "Knife" => Some(Box::new(Knife::default())),
         "Measure" => Some(Box::new(Measure::default())),
