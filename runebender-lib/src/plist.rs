@@ -13,7 +13,8 @@ pub enum Plist {
 
 #[derive(Debug)]
 pub enum Error {
-    UnexpectedChar(char),
+    //UnexpectedChar(char),
+    UnexpectedChar,
     UnclosedString,
     UnknownEscape,
     NotAString,
@@ -296,7 +297,8 @@ impl<'a> Token<'a> {
                     }
                     Ok((Token::Atom(&s[start..ix]), ix))
                 } else {
-                    Err(Error::UnexpectedChar(s[start..].chars().next().unwrap()))
+                    //Err(Error::UnexpectedChar(s[start..].chars().next().unwrap()))
+                    Err(Error::UnexpectedChar)
                 }
             }
         }
