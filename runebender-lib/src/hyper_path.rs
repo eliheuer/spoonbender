@@ -187,7 +187,9 @@ impl HyperPath {
                 match segment {
                     RawSegment::Line(_, end) => {
                         extend_from_bezpath(&mut points, &[PathEl::LineTo(end.point.to_raw())]);
-                        let mut last = points.last_mut().unwrap();
+                        // Removed mut to supress a warn
+                        //let mut last = points.last_mut().unwrap();
+                        let last = points.last_mut().unwrap();
                         last.smooth = end.is_smooth();
                         let mut lib = Plist::new();
                         lib.insert(HYPERBEZ_IS_POINT_KEY.into(), true.into());
