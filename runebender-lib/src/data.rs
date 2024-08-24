@@ -49,7 +49,7 @@ pub struct Workspace {
 ///
 /// This lets us interact with harfbuzz as if we were just a normal compiled
 /// font file.
-#[derive(Debug, Clone)]
+#[allow(dead_code)]
 struct VirtualFont {
     _glyph_ids: Vec<(char, GlyphName)>,
     _cmap: Vec<u8>,
