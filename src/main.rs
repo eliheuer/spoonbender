@@ -17,7 +17,7 @@ fn main() {
     let main_window = WindowDesc::new(make_ui())
         .title(LocalizedString::new("Spoonbender"))
         .menu(menus::make_menu)
-        .window_size(Size::new(768.0, 512.0));
+        .window_size(Size::new(1024.0, 512.0));
 
     AppLauncher::with_window(main_window)
         .delegate(Delegate::default())
@@ -34,8 +34,8 @@ fn make_ui() -> impl Widget<AppState> {
         let max_y = rect.height() - 0.5;
         let line = Line::new((0.0, max_y), (rect.width(), max_y));
 
-        ctx.fill(rect, &env.get(theme::GLYPH_LIST_BACKGROUND));
-        ctx.stroke(line, &env.get(theme::SIDEBAR_EDGE_STROKE), 1.0);
+        ctx.fill(rect, &env.get(theme::GROUND_3));
+        ctx.stroke(line, &env.get(theme::GROUND_5), 32.0);
     });
 
     let _label = Label::new(|data: &Workspace, _: &Env| {

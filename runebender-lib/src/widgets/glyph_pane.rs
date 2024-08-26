@@ -62,6 +62,7 @@ fn build_widget() -> impl Widget<EditorState> {
         .with_child(
             GlyphPainter::new()
                 .color(theme::PRIMARY_TEXT_COLOR)
+                .frame_color(theme::SELECTION_RECT_STROKE_COLOR)
                 .draw_layout_frame(true)
                 .fix_height(400.0)
                 .padding((8.0, 8.0))

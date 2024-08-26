@@ -8,6 +8,7 @@ use crate::theme;
 /// A widget that draws a glyph.
 pub struct GlyphPainter {
     color: KeyOrValue<Color>,
+    frame_color: KeyOrValue<Color>,
     placeholder_color: KeyOrValue<Color>,
     draw_frame: bool,
 }
@@ -16,6 +17,7 @@ impl GlyphPainter {
     pub fn new() -> Self {
         GlyphPainter {
             color: theme::PRIMARY_TEXT_COLOR.into(),
+            frame_color: theme::SELECTION_RECT_STROKE_COLOR.into(),
             placeholder_color: theme::PLACEHOLDER_GLYPH_COLOR.into(),
             draw_frame: false,
         }
@@ -23,6 +25,11 @@ impl GlyphPainter {
 
     pub fn color(mut self, color: impl Into<KeyOrValue<Color>>) -> Self {
         self.color = color.into();
+        self
+    }
+
+    pub fn frame_color(mut self, color: impl Into<KeyOrValue<Color>>) -> Self {
+        self.frame_color = color.into();
         self
     }
 
@@ -89,7 +96,7 @@ impl Widget<GlyphDetail> for GlyphPainter {
 
         if self.draw_frame {
             let frame_rect = (glyph_bounds.size() * scale).to_rect();
-            ctx.stroke(frame_rect, &glyph_color, 1.5);
+            ctx.stroke(frame_rect, &self.frame_color.resolve(env), 1.5);
         }
         ctx.fill(affine * &*data.outline, &glyph_color);
     }

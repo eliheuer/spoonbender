@@ -5,6 +5,7 @@ pub use druid::theme::{
     SELECTED_TEXT_BACKGROUND_COLOR, UI_FONT, WINDOW_BACKGROUND_COLOR,
 };
 use druid::{Color, Data, Env, FontDescriptor, Key, Widget};
+use harfbuzz_rs::hb::HB_AAT_LAYOUT_FEATURE_SELECTOR_JIS1978_CHARACTERS;
 
 // NOTE: Set the RB_THEME_PATH environment variable during compilation to change
 // the default theme path.
@@ -76,11 +77,33 @@ pub const OFF_CURVE_RADIUS: Key<f64> = Key::new("runebender.off-curve-point-radi
 pub const OFF_CURVE_SELECTED_RADIUS: Key<f64> =
     Key::new("runebender.off-curve-point-selected-radius");
 
+pub const FIGURE_1: Key<Color> = Key::new("runebender.figure-1");
+pub const FIGURE_2: Key<Color> = Key::new("runebender.figure-2");
+pub const FIGURE_3: Key<Color> = Key::new("runebender.figure-3");
+pub const FIGURE_4: Key<Color> = Key::new("runebender.figure-4");
+pub const FIGURE_5: Key<Color> = Key::new("runebender.figure-5");
+
+pub const GROUND_1: Key<Color> = Key::new("runebender.ground-1");
+pub const GROUND_2: Key<Color> = Key::new("runebender.ground-2");
+pub const GROUND_3: Key<Color> = Key::new("runebender.ground-3");
+pub const GROUND_4: Key<Color> = Key::new("runebender.ground-4");
+pub const GROUND_5: Key<Color> = Key::new("runebender.ground-5");
+
 pub fn configure_env(env: &mut Env) {
     env.set(UI_DETAIL_FONT, FontDescriptor::default().with_size(12.0));
 }
 
 druid_theme_loader::loadable_theme!(pub MyTheme {
+    FIGURE_1,
+    FIGURE_2,
+    FIGURE_3,
+    FIGURE_4,
+    FIGURE_5,
+    GROUND_1,
+    GROUND_2,
+    GROUND_3,
+    GROUND_4,
+    GROUND_5,
     SIDEBAR_BACKGROUND,
     SIDEBAR_EDGE_STROKE,
     PLACEHOLDER_GLYPH_COLOR,

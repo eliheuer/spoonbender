@@ -1,11 +1,23 @@
-// A sample theme file
+// The default Spoonbender theme file
+// this theme file uses a new design system that is not compatable with upstream Runebender
 // these are comments; blank lines are ignored
+
+FIGURE_1:                        #000666
+FIGURE_2:                        #111777
+FIGURE_3:                        #222888
+FIGURE_4:                        #333999
+FIGURE_5:                        #444aaa
+GROUND_1:                        #555bbb
+GROUND_2:                        #666ccc
+GROUND_3:                        #777ddd
+GROUND_4:                        #aa8eee
+GROUND_5:                        #ff9fff
 
 SIDEBAR_BACKGROUND:                 #e7e7e7
 SIDEBAR_EDGE_STROKE:                #c7c7c7
 PLACEHOLDER_GLYPH_COLOR:            #bbb
 GLYPH_LIST_STROKE:                  #e7e7e7
-GLYPH_LIST_BACKGROUND:              #f0f0f0
+GLYPH_LIST_BACKGROUND:              #999999
 GLYPH_GRID_CELL_BACKGROUND_COLOR:   #ddd
 GLYPH_GRID_CELL_OUTLINE_COLOR:      #aaa
 FOCUS_BACKGROUND_COLOR:             #ffee55
@@ -17,7 +29,7 @@ SELECTION_RECT_FILL_COLOR:          #ddd5
 
 SELECTED_TEXT_BACKGROUND_COLOR: #a6ccff
 LABEL_COLOR:                    #000
-WINDOW_BACKGROUND_COLOR:        #fff
+WINDOW_BACKGROUND_COLOR:        #cccccc
 BACKGROUND_LIGHT:               #e7e7e7
 CURSOR_COLOR:                   #000
 BUTTON_DARK:                    #c8c8c8
