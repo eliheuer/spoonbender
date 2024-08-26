@@ -119,7 +119,7 @@ impl Widget<Workspace> for GlyphGrid {
 impl GlyphGrid {
     pub fn new() -> impl Widget<Workspace> {
         Padding::new(
-            20.0, // Adjust this value to increase or decrease padding
+            8.0, // Adjust this value to increase or decrease padding
             GlyphGrid {
                 children: Vec::new(),
             }
