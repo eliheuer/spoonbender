@@ -2,16 +2,23 @@
 // this theme file uses a new design system that is not compatable with upstream Runebender
 // these are comments; blank lines are ignored
 
-FIGURE_1:                        #000666
-FIGURE_2:                        #111777
-FIGURE_3:                        #222888
-FIGURE_4:                        #333999
-FIGURE_5:                        #444aaa
-GROUND_1:                        #555bbb
-GROUND_2:                        #666ccc
-GROUND_3:                        #777ddd
-GROUND_4:                        #aa8eee
-GROUND_5:                        #ff9fff
+FIGURE_1: #000000
+FIGURE_2: #111111
+FIGURE_3: #222222
+FIGURE_4: #333333
+FIGURE_5: #444444
+
+GROUND_1: #666666
+GROUND_2: #888888
+GROUND_3: #22aa55
+GROUND_4: #cccccc
+GROUND_5: #eeeeee
+
+FOCUS_1: #ff2211
+FOCUS_2: #ffaa11
+FOCUS_3: #ffee55
+FOCUS_4: #66ee55
+FOCUS_5: #22aa55
 
 SIDEBAR_BACKGROUND:                 #e7e7e7
 SIDEBAR_EDGE_STROKE:                #c7c7c7

@@ -5,7 +5,7 @@ pub use druid::theme::{
     SELECTED_TEXT_BACKGROUND_COLOR, UI_FONT, WINDOW_BACKGROUND_COLOR,
 };
 use druid::{Color, Data, Env, FontDescriptor, Key, Widget};
-use harfbuzz_rs::hb::HB_AAT_LAYOUT_FEATURE_SELECTOR_JIS1978_CHARACTERS;
+//use harfbuzz_rs::hb::HB_AAT_LAYOUT_FEATURE_SELECTOR_JIS1978_CHARACTERS;
 
 // NOTE: Set the RB_THEME_PATH environment variable during compilation to change
 // the default theme path.
@@ -89,6 +89,12 @@ pub const GROUND_3: Key<Color> = Key::new("runebender.ground-3");
 pub const GROUND_4: Key<Color> = Key::new("runebender.ground-4");
 pub const GROUND_5: Key<Color> = Key::new("runebender.ground-5");
 
+pub const FOCUS_1: Key<Color> = Key::new("runebender.focus-1");
+pub const FOCUS_2: Key<Color> = Key::new("runebender.focus-2");
+pub const FOCUS_3: Key<Color> = Key::new("runebender.focus-3");
+pub const FOCUS_4: Key<Color> = Key::new("runebender.focus-4");
+pub const FOCUS_5: Key<Color> = Key::new("runebender.focus-5");
+
 pub fn configure_env(env: &mut Env) {
     env.set(UI_DETAIL_FONT, FontDescriptor::default().with_size(12.0));
 }
@@ -104,6 +110,11 @@ druid_theme_loader::loadable_theme!(pub MyTheme {
     GROUND_3,
     GROUND_4,
     GROUND_5,
+    FOCUS_1,
+    FOCUS_2,
+    FOCUS_3,
+    FOCUS_4,
+    FOCUS_5,
     SIDEBAR_BACKGROUND,
     SIDEBAR_EDGE_STROKE,
     PLACEHOLDER_GLYPH_COLOR,

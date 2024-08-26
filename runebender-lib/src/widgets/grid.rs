@@ -35,7 +35,7 @@ impl GlyphGrid {
 
 impl Widget<Workspace> for GlyphGrid {
     fn paint(&mut self, ctx: &mut PaintCtx, data: &Workspace, env: &Env) {
-        ctx.render_ctx.clear(env.get(theme::GLYPH_LIST_BACKGROUND));
+        ctx.render_ctx.clear(env.get(theme::GROUND_3));
         let row_len = 1.0_f64.max(ctx.size().width / GLYPH_SIZE).floor() as usize;
         let _row_count = if self.children.is_empty() {
             0
