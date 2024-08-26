@@ -8,6 +8,7 @@ use druid::kurbo::{Affine, Rect, Shape, Size};
 //};
 use druid::widget::prelude::*;
 use druid::{Data, Insets, TextLayout, WidgetExt, WidgetPod};
+use druid::widget::Padding;
 
 use crate::app_delegate::EDIT_GLYPH;
 use crate::data::{GridGlyph, Workspace};
@@ -55,7 +56,8 @@ impl Widget<Workspace> for GlyphGrid {
         data: &Workspace,
         env: &Env,
     ) -> Size {
-        let width = (bc.max().width / GLYPH_SIZE).floor() * GLYPH_SIZE;
+        let available_width = bc.max().width;
+        let width = (available_width / GLYPH_SIZE).floor() * GLYPH_SIZE;
         let mut x: f64 = 0.;
         let mut y: f64 = 0.;
 
@@ -115,8 +117,13 @@ impl Widget<Workspace> for GlyphGrid {
 }
 
 impl GlyphGrid {
-    pub fn new() -> GlyphGrid {
-        Default::default()
+    pub fn new() -> impl Widget<Workspace> {
+        Padding::new(
+            20.0, // Adjust this value to increase or decrease padding
+            GlyphGrid {
+                children: Vec::new(),
+            }
+        )
     }
 }
 
@@ -138,8 +145,9 @@ impl Widget<GridGlyph> for GridInner {
         let path = data.outline.clone();
         let bb = path.bounding_box();
         let geom = ctx.size().to_rect();
+        // Increase padding by adjusting this value (e.g., from 0.55 to 0.5)
         let scale = geom.height() as f64 / data.upm;
-        let scale = scale * 0.55; // some margins around glyphs
+        let scale = scale * 0.25; // Reduced from 0.55 to add more padding
         let scaled_width = bb.width() * scale as f64;
         let l_pad = ((geom.width() as f64 - scaled_width) / 2.).round();
         let baseline = (geom.height() * 0.37) as f64;
