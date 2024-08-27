@@ -16,9 +16,9 @@ pub struct GlyphPainter {
 impl GlyphPainter {
     pub fn new() -> Self {
         GlyphPainter {
-            color: theme::PRIMARY_TEXT_COLOR.into(),
-            frame_color: theme::SELECTION_RECT_STROKE_COLOR.into(),
-            placeholder_color: theme::PLACEHOLDER_GLYPH_COLOR.into(),
+            color: theme::FIGURE_2.into(),
+            frame_color: theme::GROUND_3.into(),
+            placeholder_color: theme::FOCUS_1.into(),
             draw_frame: false,
         }
     }
