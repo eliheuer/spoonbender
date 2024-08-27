@@ -147,7 +147,7 @@ impl Widget<GridGlyph> for GridInner {
         let geom = ctx.size().to_rect();
         // Increase padding by adjusting this value (e.g., from 0.55 to 0.5)
         let scale = geom.height() as f64 / data.upm;
-        let scale = scale * 0.25; // Reduced from 0.55 to add more padding
+        let scale = scale * 0.35; // Reduced from 0.55 to add more padding
         let scaled_width = bb.width() * scale as f64;
         let l_pad = ((geom.width() as f64 - scaled_width) / 2.).round();
         let baseline = (geom.height() * 0.37) as f64;
@@ -160,10 +160,10 @@ impl Widget<GridGlyph> for GridInner {
             geom.height() - baseline,
         ]);
 
-        let glyph_rect: Rect = geom - Insets::uniform(5.0);
-        let rounded = glyph_rect.to_rounded_rect(9.0);
-        ctx.fill(rounded, &env.get(theme::GLYPH_GRID_CELL_BACKGROUND_COLOR));
-        ctx.stroke(rounded, &env.get(theme::GLYPH_GRID_CELL_OUTLINE_COLOR), 2.0);
+        let glyph_rect: Rect = geom - Insets::uniform(2.0);
+        let rounded = glyph_rect.to_rounded_rect(16.0);
+        ctx.fill(rounded, &env.get(theme::GROUND_3));
+        ctx.stroke(rounded, &env.get(theme::GROUND_4), 1.0);
         if ctx.is_active() || data.is_selected {
             ctx.fill(rounded, &env.get(theme::FOCUS_BACKGROUND_COLOR));
             ctx.stroke(rounded, &env.get(theme::FOCUS_OUTLINE_COLOR), 3.0);
