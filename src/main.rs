@@ -17,7 +17,7 @@ fn main() {
     let main_window = WindowDesc::new(make_ui())
         .title(LocalizedString::new("Spoonbender"))
         .menu(menus::make_menu)
-        .window_size(Size::new(1040.0, 512.0));
+        .window_size(Size::new(1054.0, 670.0));
 
     AppLauncher::with_window(main_window)
         .delegate(Delegate::default())

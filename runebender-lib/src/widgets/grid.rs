@@ -15,7 +15,7 @@ use crate::data::{GridGlyph, Workspace};
 use crate::theme;
 use crate::widgets::Maybe;
 
-const GLYPH_SIZE: f64 = 128.;
+const GLYPH_SIZE: f64 = 169.;
 
 #[derive(Default)]
 pub struct GlyphGrid {
@@ -36,7 +36,7 @@ impl GlyphGrid {
 
 impl Widget<Workspace> for GlyphGrid {
     fn paint(&mut self, ctx: &mut PaintCtx, data: &Workspace, env: &Env) {
-        ctx.render_ctx.clear(env.get(theme::GROUND_3));
+        ctx.render_ctx.clear(env.get(theme::GROUND_1));
         let row_len = 1.0_f64.max(ctx.size().width / GLYPH_SIZE).floor() as usize;
         let _row_count = if self.children.is_empty() {
             0
@@ -57,23 +57,25 @@ impl Widget<Workspace> for GlyphGrid {
         env: &Env,
     ) -> Size {
         let available_width = bc.max().width;
-        let width = (available_width / GLYPH_SIZE).floor() * GLYPH_SIZE;
+        let cell_margin = 4.0; // Add this line to define the margin
+        let cell_size = GLYPH_SIZE + cell_margin; // Modify this line
+        let width = (available_width / cell_size).floor() * cell_size;
         let mut x: f64 = 0.;
         let mut y: f64 = 0.;
 
         let child_bc = BoxConstraints::tight(Size::new(GLYPH_SIZE, GLYPH_SIZE));
 
         for child in &mut self.children {
-            if x > 0. && x + GLYPH_SIZE > width {
-                y += GLYPH_SIZE;
+            if x > 0. && x + cell_size > width {
+                y += cell_size;
                 x = 0.;
             }
             child.layout(ctx, &child_bc, data, env);
-            let rect = Rect::from_origin_size((x, y), (GLYPH_SIZE, GLYPH_SIZE));
+            let rect = Rect::from_origin_size((x + cell_margin / 2.0, y + cell_margin / 2.0), (GLYPH_SIZE, GLYPH_SIZE));
             child.set_layout_rect(ctx, data, env, rect);
-            x += GLYPH_SIZE;
+            x += cell_size;
         }
-        Size::new(width, y + GLYPH_SIZE)
+        Size::new(width, y + cell_size)
     }
 
     fn event(&mut self, ctx: &mut EventCtx, event: &Event, data: &mut Workspace, env: &Env) {
@@ -162,16 +164,16 @@ impl Widget<GridGlyph> for GridInner {
 
         let glyph_rect: Rect = geom - Insets::uniform(2.0);
         let rounded = glyph_rect.to_rounded_rect(16.0);
-        ctx.fill(rounded, &env.get(theme::GROUND_3));
-        ctx.stroke(rounded, &env.get(theme::GROUND_4), 1.0);
+        ctx.fill(rounded, &env.get(theme::GROUND_2));
+        ctx.stroke(rounded, &env.get(theme::GROUND_0), 2.0);
         if ctx.is_active() || data.is_selected {
-            ctx.fill(rounded, &env.get(theme::FOCUS_BACKGROUND_COLOR));
-            ctx.stroke(rounded, &env.get(theme::FOCUS_OUTLINE_COLOR), 3.0);
+            ctx.fill(rounded, &env.get(theme::FOCUS_3));
+            ctx.stroke(rounded, &env.get(theme::FOCUS_2), 3.0);
         }
         let glyph_color = if data.is_placeholder {
-            env.get(theme::PLACEHOLDER_GLYPH_COLOR)
+            env.get(theme::FOCUS_1)
         } else {
-            env.get(theme::PRIMARY_TEXT_COLOR)
+            env.get(theme::FIGURE_4)
         };
 
         ctx.render_ctx.fill(affine * &*path, &glyph_color);
@@ -228,7 +230,7 @@ impl Widget<GridGlyph> for GridInner {
             LifeCycle::WidgetAdded => {
                 self.text.set_text(data.name.clone());
                 self.text.set_font(theme::UI_DETAIL_FONT);
-                self.text.set_text_color(theme::PRIMARY_TEXT_COLOR);
+                self.text.set_text_color(theme::FIGURE_4);
                 self.text.rebuild_if_needed(ctx.text(), env);
             }
             _ => (),

@@ -83,6 +83,7 @@ pub const FIGURE_3: Key<Color> = Key::new("runebender.figure-3");
 pub const FIGURE_4: Key<Color> = Key::new("runebender.figure-4");
 pub const FIGURE_5: Key<Color> = Key::new("runebender.figure-5");
 
+pub const GROUND_0: Key<Color> = Key::new("runebender.ground-0");
 pub const GROUND_1: Key<Color> = Key::new("runebender.ground-1");
 pub const GROUND_2: Key<Color> = Key::new("runebender.ground-2");
 pub const GROUND_3: Key<Color> = Key::new("runebender.ground-3");
@@ -96,7 +97,7 @@ pub const FOCUS_4: Key<Color> = Key::new("runebender.focus-4");
 pub const FOCUS_5: Key<Color> = Key::new("runebender.focus-5");
 
 pub fn configure_env(env: &mut Env) {
-    env.set(UI_DETAIL_FONT, FontDescriptor::default().with_size(12.0));
+    env.set(UI_DETAIL_FONT, FontDescriptor::default().with_size(16.0));
 }
 
 druid_theme_loader::loadable_theme!(pub MyTheme {
@@ -105,6 +106,7 @@ druid_theme_loader::loadable_theme!(pub MyTheme {
     FIGURE_3,
     FIGURE_4,
     FIGURE_5,
+    GROUND_0,
     GROUND_1,
     GROUND_2,
     GROUND_3,
