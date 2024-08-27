@@ -90,6 +90,12 @@ pub const GROUND_3: Key<Color> = Key::new("runebender.ground-3");
 pub const GROUND_4: Key<Color> = Key::new("runebender.ground-4");
 pub const GROUND_5: Key<Color> = Key::new("runebender.ground-5");
 
+pub const TOOLBAR_1: Key<Color> = Key::new("runebender.toolbar-1");
+pub const TOOLBAR_2: Key<Color> = Key::new("runebender.toolbar-2");
+pub const TOOLBAR_3: Key<Color> = Key::new("runebender.toolbar-3");
+pub const TOOLBAR_4: Key<Color> = Key::new("runebender.toolbar-4");
+pub const TOOLBAR_5: Key<Color> = Key::new("runebender.toolbar-5");
+
 pub const FOCUS_1: Key<Color> = Key::new("runebender.focus-1");
 pub const FOCUS_2: Key<Color> = Key::new("runebender.focus-2");
 pub const FOCUS_3: Key<Color> = Key::new("runebender.focus-3");
@@ -112,6 +118,11 @@ druid_theme_loader::loadable_theme!(pub MyTheme {
     GROUND_3,
     GROUND_4,
     GROUND_5,
+    TOOLBAR_1,
+    TOOLBAR_2,
+    TOOLBAR_3,
+    TOOLBAR_4,
+    TOOLBAR_5,
     FOCUS_1,
     FOCUS_2,
     FOCUS_3,

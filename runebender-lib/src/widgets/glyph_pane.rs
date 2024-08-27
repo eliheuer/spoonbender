@@ -61,11 +61,11 @@ fn build_widget() -> impl Widget<EditorState> {
     Flex::column()
         .with_child(
             GlyphPainter::new()
-                .color(theme::PRIMARY_TEXT_COLOR)
-                .frame_color(theme::SELECTION_RECT_STROKE_COLOR)
+                .color(theme::FIGURE_3)
+                .frame_color(theme::FIGURE_4)
                 .draw_layout_frame(true)
-                .fix_height(400.0)
-                .padding((8.0, 8.0))
+                .fix_height(384.0)
+                .padding((4.0, 4.0))
                 .lens(EditorState::detail_glyph),
         )
         .with_child(
@@ -105,5 +105,6 @@ fn build_widget() -> impl Widget<EditorState> {
                         .fix_width(72.0),
                 )
         )
-        .padding(8.0)
+        .padding(16.0)
+        .background(theme::GROUND_2)
 }

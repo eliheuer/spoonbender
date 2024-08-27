@@ -17,7 +17,7 @@ impl GlyphPainter {
     pub fn new() -> Self {
         GlyphPainter {
             color: theme::FIGURE_2.into(),
-            frame_color: theme::GROUND_3.into(),
+            frame_color: theme::FIGURE_3.into(), // Changed from GROUND_3 to FIGURE_3
             placeholder_color: theme::FOCUS_1.into(),
             draw_frame: false,
         }
