@@ -95,7 +95,7 @@ impl<'a, 'b: 'a> DrawCtx<'a, 'b> {
 
         // Calculate grid fade based on zoom level
         //let grid_fade = (self.space.zoom / 10.0).min(1.0).max(0.05);
-        let grid_fade = (self.space.zoom / 1.0).min(0.4).max(0.01); // Adjusted max and min values
+        let grid_fade = (self.space.zoom / 1.0).min(0.3).max(0.001); // Adjusted max and min values
         // Use FIGURE_1 for a lighter shade
         let grid_color = self.env.get(theme::FIGURE_1).with_alpha(grid_fade);
 
