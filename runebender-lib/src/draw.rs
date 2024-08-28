@@ -85,7 +85,7 @@ impl<'a, 'b: 'a> DrawCtx<'a, 'b> {
     }
 
     fn draw_grid(&mut self) {
-        const GRID_SPACING: f64 = 8.0;
+        const GRID_SPACING: f64 = 16.0;
 
         let grid_spacing = if self.space.zoom < 1.0 {
             GRID_SPACING * (1.0 / self.space.zoom).ceil()
@@ -94,8 +94,10 @@ impl<'a, 'b: 'a> DrawCtx<'a, 'b> {
         };
 
         // Calculate grid fade based on zoom level
-        let grid_fade = (self.space.zoom / 10.0).min(1.0).max(0.05);
-        let grid_color = self.env.get(theme::FIGURE_3).with_alpha(grid_fade);
+        //let grid_fade = (self.space.zoom / 10.0).min(1.0).max(0.05);
+        let grid_fade = (self.space.zoom / 1.0).min(1.0).max(0.05);
+        // Use FIGURE_2 instead of FIGURE_3 for a darker shade
+        let grid_color = self.env.get(theme::FIGURE_1).with_alpha(grid_fade);
 
         let visible_pixels =
             self.visible_rect.width().max(self.visible_rect.height()) / self.space.zoom;

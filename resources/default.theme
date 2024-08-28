@@ -57,7 +57,7 @@ KNIFE_GUIDE_INTERSECTION:       #f00
 
 PATH_STROKE_COLOR:              #000
 PATH_FILL_COLOR:                #000        // during preview
-METRICS_COLOR:                  #a0a0a0     // the color of the ascender/descender/em box
+METRICS_COLOR:                  #000000     // the color of the ascender/descender/em box
 
 GUIDE_COLOR:                    #fc5493
 SELECTED_GUIDE_COLOR:           #fecdcd
