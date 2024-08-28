@@ -85,40 +85,39 @@ impl<'a, 'b: 'a> DrawCtx<'a, 'b> {
     }
 
     fn draw_grid(&mut self) {
-        const MIN_SCALE_FOR_GRID: f64 = 4.0;
+        const GRID_SPACING: f64 = 8.0;
 
-        if self.space.zoom >= MIN_SCALE_FOR_GRID {
-            // we draw the grid very lightly at low zoom levels.
-            let grid_fade = ((self.space.zoom - MIN_SCALE_FOR_GRID) / 10.)
-                .min(1.0)
-                .max(0.05);
-            let gray_val = 0xFF - (68. * grid_fade) as u8;
-            let brush = Color::rgb8(gray_val, gray_val, gray_val);
+        let grid_spacing = if self.space.zoom < 1.0 {
+            GRID_SPACING * (1.0 / self.space.zoom).ceil()
+        } else {
+            GRID_SPACING
+        };
 
-            let visible_pixels =
-                self.visible_rect.width().max(self.visible_rect.height()) / self.space.zoom;
-            let visible_pixels = visible_pixels.ceil() as usize;
+        // Calculate grid fade based on zoom level
+        let grid_fade = (self.space.zoom / 10.0).min(1.0).max(0.05);
+        let grid_color = self.env.get(theme::FIGURE_3).with_alpha(grid_fade);
 
-            let view_origin = self.space.inverse_affine() * self.visible_rect.origin();
-            let Point { x, y } = view_origin.round();
+        let visible_pixels =
+            self.visible_rect.width().max(self.visible_rect.height()) / self.space.zoom;
+        let visible_pixels = visible_pixels.ceil() as usize;
 
-            //NOTE: we are drawing in glyph space; y is up.
+        let view_origin = self.space.inverse_affine() * self.visible_rect.origin();
+        let Point { x, y } = view_origin.round();
 
-            // draw one line past what is visible.
-            let x1 = x - 1.;
-            let y1 = y + 1.;
-            let len = 2.0 + visible_pixels as f64;
-            for i in 0..=visible_pixels {
-                let off = i as f64;
-                let xmin = self.space.to_screen((x1 + off, y1));
-                let xmax = self.space.to_screen((x1 + off, y1 - len));
-                //TODO: this might mean that we draw lines at different pixel
-                //intervals, based on how the rounding goes? is it better to floor()?
-                let ymin = self.space.to_screen((x1, y1 - off)).round();
-                let ymax = self.space.to_screen((x1 + len, y1 - off)).round();
-                self.stroke(Line::new(xmin, xmax), &brush, 1.0);
-                self.stroke(Line::new(ymin, ymax), &brush, 1.0);
-            }
+        // Draw one line past what is visible.
+        let x1 = (x / grid_spacing).floor() * grid_spacing - grid_spacing;
+        let y1 = (y / grid_spacing).ceil() * grid_spacing + grid_spacing;
+        let len = 2.0 + visible_pixels as f64;
+        let grid_lines = (visible_pixels / grid_spacing as usize) + 2;
+
+        for i in 0..=grid_lines {
+            let off = i as f64 * grid_spacing;
+            let xmin = self.space.to_screen((x1 + off, y1));
+            let xmax = self.space.to_screen((x1 + off, y1 - len));
+            let ymin = self.space.to_screen((x1, y1 - off)).round();
+            let ymax = self.space.to_screen((x1 + len, y1 - off)).round();
+            self.stroke(Line::new(xmin, xmax), &grid_color, 0.5);
+            self.stroke(Line::new(ymin, ymax), &grid_color, 0.5);
         }
     }
 
