@@ -95,13 +95,13 @@ impl<'a, 'b: 'a> DrawCtx<'a, 'b> {
 
         // Calculate grid fade based on zoom level
         //let grid_fade = (self.space.zoom / 10.0).min(1.0).max(0.05);
-        let grid_fade = (self.space.zoom / 1.0).min(1.0).max(0.05);
-        // Use FIGURE_2 instead of FIGURE_3 for a darker shade
+        let grid_fade = (self.space.zoom / 1.0).min(0.4).max(0.01); // Adjusted max and min values
+        // Use FIGURE_1 for a lighter shade
         let grid_color = self.env.get(theme::FIGURE_1).with_alpha(grid_fade);
 
-        let visible_pixels =
-            self.visible_rect.width().max(self.visible_rect.height()) / self.space.zoom;
-        let visible_pixels = visible_pixels.ceil() as usize;
+        let visible_width = self.visible_rect.width() / self.space.zoom;
+        let visible_height = self.visible_rect.height() / self.space.zoom;
+        let visible_pixels = visible_width.max(visible_height).ceil() as usize;
 
         let view_origin = self.space.inverse_affine() * self.visible_rect.origin();
         let Point { x, y } = view_origin.round();
@@ -109,13 +109,13 @@ impl<'a, 'b: 'a> DrawCtx<'a, 'b> {
         // Draw one line past what is visible.
         let x1 = (x / grid_spacing).floor() * grid_spacing - grid_spacing;
         let y1 = (y / grid_spacing).ceil() * grid_spacing + grid_spacing;
-        let len = 2.0 + visible_pixels as f64;
+        let len = visible_width + 2.0 * grid_spacing; // Extend beyond visible area
         let grid_lines = (visible_pixels / grid_spacing as usize) + 2;
 
         for i in 0..=grid_lines {
             let off = i as f64 * grid_spacing;
             let xmin = self.space.to_screen((x1 + off, y1));
-            let xmax = self.space.to_screen((x1 + off, y1 - len));
+            let xmax = self.space.to_screen((x1 + off, y1 - visible_height - 2.0 * grid_spacing));
             let ymin = self.space.to_screen((x1, y1 - off)).round();
             let ymax = self.space.to_screen((x1 + len, y1 - off)).round();
             self.stroke(Line::new(xmin, xmax), &grid_color, 0.5);
