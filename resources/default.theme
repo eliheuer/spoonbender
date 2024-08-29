@@ -27,37 +27,37 @@ FOCUS_3: #ffee55
 FOCUS_4: #66ee55
 FOCUS_5: #22aa55
 
-SIDEBAR_BACKGROUND:                 #e7e7e7
-SIDEBAR_EDGE_STROKE:                #c7c7c7
-PLACEHOLDER_GLYPH_COLOR:            #bbb
-GLYPH_LIST_STROKE:                  #e7e7e7
-GLYPH_LIST_BACKGROUND:              #999999
-GLYPH_GRID_CELL_BACKGROUND_COLOR:   #ddd
-GLYPH_GRID_CELL_OUTLINE_COLOR:      #aaa
+SIDEBAR_BACKGROUND:                 #22eeff
+SIDEBAR_EDGE_STROKE:                #ee22ff
+PLACEHOLDER_GLYPH_COLOR:            #ff99ff
+GLYPH_LIST_STROKE:                  #aaff88
+GLYPH_LIST_BACKGROUND:              #00ffaa
+GLYPH_GRID_CELL_BACKGROUND_COLOR:   #ffff22
+GLYPH_GRID_CELL_OUTLINE_COLOR:      #0000ff
 FOCUS_BACKGROUND_COLOR:             #ffee55
 FOCUS_OUTLINE_COLOR:                #ffaa11
-PRIMARY_TEXT_COLOR:                 #000
-SECONDARY_TEXT_COLOR:               #888
-SELECTION_RECT_STROKE_COLOR:        #538bbb
-SELECTION_RECT_FILL_COLOR:          #ddd5
+PRIMARY_TEXT_COLOR:                 #5577ff
+SECONDARY_TEXT_COLOR:               #7755ff
+SELECTION_RECT_STROKE_COLOR:        #ff7700
+SELECTION_RECT_FILL_COLOR:          #ffaa11
 
 SELECTED_TEXT_BACKGROUND_COLOR: #a6ccff
-LABEL_COLOR:                    #000
-WINDOW_BACKGROUND_COLOR:        #cccccc
-BACKGROUND_LIGHT:               #e7e7e7
-CURSOR_COLOR:                   #000
-BUTTON_DARK:                    #c8c8c8
-BUTTON_LIGHT:                   #fff
+LABEL_COLOR:                    #2299ff
+WINDOW_BACKGROUND_COLOR:        #ffaa00
+BACKGROUND_LIGHT:               #aa33ff
+CURSOR_COLOR:                   #33aaff
+BUTTON_DARK:                    #ff33aa
+BUTTON_LIGHT:                   #aaff33
 
 // tools
-KNIFE_GUIDE:                    #888
-KNIFE_GUIDE_INTERSECTION:       #f00
+KNIFE_GUIDE:                    #22aa33
+KNIFE_GUIDE_INTERSECTION:       #ff0000
 
 // drawing of paths and points in the editor
 
-PATH_STROKE_COLOR:              #000
-PATH_FILL_COLOR:                #000        // during preview
-METRICS_COLOR:                  #000000     // the color of the ascender/descender/em box
+PATH_STROKE_COLOR:              #0000ff
+PATH_FILL_COLOR:                #0000ff        // during preview
+METRICS_COLOR:                  #ff0000     // the color of the ascender/descender/em box
 
 GUIDE_COLOR:                    #fc5493
 SELECTED_GUIDE_COLOR:           #fecdcd
@@ -68,15 +68,15 @@ SMOOTH_POINT_OUTER_COLOR:       #4428ec
 SMOOTH_POINT_INNER_COLOR:       #579aff
 CORNER_POINT_OUTER_COLOR:       #208e56
 CORNER_POINT_INNER_COLOR:       #6ae756
-OFF_CURVE_POINT_OUTER_COLOR:    #999
-OFF_CURVE_POINT_INNER_COLOR:    #ccc
-OFF_CURVE_HANDLE_COLOR:         #bbb
-DIRECTION_ARROW_COLOR:          #208e5699
-COMPONENT_FILL_COLOR:           #f004
+OFF_CURVE_POINT_OUTER_COLOR:    #ff2211
+OFF_CURVE_POINT_INNER_COLOR:    #ff9944
+OFF_CURVE_HANDLE_COLOR:         #0000ff
+DIRECTION_ARROW_COLOR:          #22aa33
+COMPONENT_FILL_COLOR:           #ff0033
 
-SMOOTH_RADIUS:                  5.
+SMOOTH_RADIUS:                  6.
 SMOOTH_SELECTED_RADIUS:         6.5
-CORNER_RADIUS:                  4.5
+CORNER_RADIUS:                  5.5
 CORNER_SELECTED_RADIUS:         6.
-OFF_CURVE_RADIUS:               3.5
-OFF_CURVE_SELECTED_RADIUS:      5.
+OFF_CURVE_RADIUS:               4.5
+OFF_CURVE_SELECTED_RADIUS:      6.
