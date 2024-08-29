@@ -7,7 +7,7 @@ use druid::widget::{Painter, WidgetExt};
 use druid::{Color, Data, HotKey, KeyEvent, Rect, SysMods, WidgetPod};
 
 //use crate::{consts, bez_cache};
-use crate::{consts};
+use crate::{consts, theme};
 use crate::tools::ToolId;
 
 const TOOLBAR_ITEM_SIZE: Size = Size::new(64.0, 64.0);
@@ -45,7 +45,7 @@ impl Toolbar {
     fn new(items: Vec<ToolbarItem>) -> Self {
         let mut widgets = Vec::with_capacity(items.capacity());
         for icon in items.iter().map(|item| item.icon.clone()) {
-            let widg = Painter::new(move |ctx, is_selected: &bool, _| {
+            let widg = Painter::new(move |ctx, is_selected: &bool, env: &Env| {
                 let color = if *is_selected {
                     TOOLBAR_BG_SELECTED
                 } else {
@@ -54,14 +54,14 @@ impl Toolbar {
                 let frame = ctx.size().to_rect();
                 ctx.fill(frame, &color);
                 if *is_selected {
-                    ctx.fill(&icon, &Color::WHITE);
-                    ctx.stroke(&icon, &Color::BLACK, TOOLBAR_ITEM_STROKE_WIDTH);
+                    ctx.fill(frame, &env.get(theme::TOOLBAR_1));
+                    ctx.fill(&icon, &env.get(theme::TOOLBAR_1));
+                    ctx.stroke(&icon, &env.get(theme::TOOLBAR_2), TOOLBAR_ITEM_STROKE_WIDTH);
                 } else {
-                    ctx.fill(&icon, &Color::BLACK);
-                    ctx.stroke(&icon, &Color::WHITE, TOOLBAR_ITEM_STROKE_WIDTH);
+                    ctx.fill(frame, &env.get(theme::TOOLBAR_3));
+                    ctx.fill(&icon, &env.get(theme::TOOLBAR_3));
+                    ctx.stroke(&icon, &env.get(theme::TOOLBAR_4), TOOLBAR_ITEM_STROKE_WIDTH);
                 };
-                //ctx.fill(&icon, &Color::BLACK);
-                //ctx.stroke(&icon, &Color::WHITE, TOOLBAR_ITEM_STROKE_WIDTH);
             });
 
             let widg = widg.on_click(|ctx, selected, _| {
@@ -154,7 +154,8 @@ impl<T: Data> Widget<T> for Toolbar {
                 (child_frame.min_x() - stroke_inset, child_frame.min_y()),
                 (child_frame.min_x() - stroke_inset, child_frame.max_y()),
             );
-            ctx.stroke(line, &Color::WHITE, TOOLBAR_BORDER_STROKE_WIDTH);
+            //ctx.stroke(line, &Color::WHITE, TOOLBAR_BORDER_STROKE_WIDTH);
+            ctx.stroke(line, &env.get(theme::TOOLBAR_4), TOOLBAR_BORDER_STROKE_WIDTH);
         }
     }
 }
@@ -210,7 +211,8 @@ impl<T: Data, W: Widget<T>> Widget<T> for FloatingPanel<W> {
             ctx.clip(rounded);
             self.inner.paint(ctx, data, env);
         });
-        ctx.stroke(rounded, &Color::WHITE, TOOLBAR_BORDER_STROKE_WIDTH);
+        //ctx.stroke(rounded, &Color::WHITE, TOOLBAR_BORDER_STROKE_WIDTH);
+        ctx.stroke(rounded, &env.get(theme::TOOLBAR_4), TOOLBAR_BORDER_STROKE_WIDTH);
     }
 }
 
