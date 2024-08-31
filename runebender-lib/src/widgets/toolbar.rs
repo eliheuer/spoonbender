@@ -1,7 +1,7 @@
 //! The toolbar widget
 
-use druid::kurbo::{Affine, BezPath, Line, Shape};
-//use druid::kurbo::{Affine, BezPath, Line, Shape, Vec2};
+//use druid::kurbo::{Affine, BezPath, Line, Shape};
+use druid::kurbo::{Affine, BezPath, Line, Shape, Vec2};
 use druid::widget::prelude::*;
 use druid::widget::{Painter, WidgetExt};
 use druid::{Color, Data, HotKey, KeyEvent, Rect, SysMods, WidgetPod};
@@ -10,14 +10,14 @@ use druid::{Color, Data, HotKey, KeyEvent, Rect, SysMods, WidgetPod};
 use crate::{consts, theme};
 use crate::tools::ToolId;
 
+// TODO: move these to theme
 const TOOLBAR_ITEM_SIZE: Size = Size::new(64.0, 64.0);
 const TOOLBAR_ITEM_PADDING: f64 = 0.0;
 const TOOLBAR_ICON_PADDING: f64 = 8.0;
 const TOOLBAR_BORDER_STROKE_WIDTH: f64 = 1.5;
 const TOOLBAR_ITEM_STROKE_WIDTH: f64 = 1.25;
-// TODO: move these to theme
-const TOOLBAR_BG_DEFAULT: Color = Color::grey8(0x00);
-const TOOLBAR_BG_SELECTED: Color = Color::rgb8(0xff, 0xaa, 0x11);
+//const TOOLBAR_BG_DEFAULT: Color = Color::grey8(0x00);
+//const TOOLBAR_BG_SELECTED: Color = Color::rgb8(0xff, 0xaa, 0x11);
 
 struct ToolbarItem {
     icon: BezPath,
@@ -47,18 +47,20 @@ impl Toolbar {
         for icon in items.iter().map(|item| item.icon.clone()) {
             let widg = Painter::new(move |ctx, is_selected: &bool, env: &Env| {
                 let color = if *is_selected {
-                    TOOLBAR_BG_SELECTED
+                    // Toolbar BG selected
+                    env.get(theme::FOCUS_3)
                 } else {
-                    TOOLBAR_BG_DEFAULT
+                    // Toolbar BG default
+                    env.get(theme::TOOLBAR_2)
                 };
                 let frame = ctx.size().to_rect();
                 ctx.fill(frame, &color);
                 if *is_selected {
-                    ctx.fill(frame, &env.get(theme::TOOLBAR_1));
+                    //ctx.fill(frame, &env.get(theme::TOOLBAR_1));
                     ctx.fill(&icon, &env.get(theme::TOOLBAR_1));
                     ctx.stroke(&icon, &env.get(theme::TOOLBAR_2), TOOLBAR_ITEM_STROKE_WIDTH);
                 } else {
-                    ctx.fill(frame, &env.get(theme::TOOLBAR_3));
+                    //ctx.fill(frame, &env.get(theme::TOOLBAR_3));
                     ctx.fill(&icon, &env.get(theme::TOOLBAR_3));
                     ctx.stroke(&icon, &env.get(theme::TOOLBAR_4), TOOLBAR_ITEM_STROKE_WIDTH);
                 };
@@ -204,9 +206,10 @@ impl<T: Data, W: Widget<T>> Widget<T> for FloatingPanel<W> {
             return;
         }
         let frame = ctx.size().to_rect();
-        //ctx.blurred_rect(frame + Vec2::new(2.0, 2.0), 4.0, &Color::grey(0.5));
+        ctx.blurred_rect(frame + Vec2::new(2.0, 2.0), 4.0, &Color::grey(0.5));
         let rounded = frame.to_rounded_rect(5.0);
-        ctx.fill(rounded, &TOOLBAR_BG_DEFAULT);
+        //ctx.fill(rounded, &TOOLBAR_BG_DEFAULT);
+        ctx.fill(rounded, &env.get(theme::TOOLBAR_4));
         ctx.with_save(|ctx| {
             ctx.clip(rounded);
             self.inner.paint(ctx, data, env);
