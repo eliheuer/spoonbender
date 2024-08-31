@@ -255,7 +255,7 @@ impl Editor {
 impl Widget<EditorState> for Editor {
     fn paint(&mut self, ctx: &mut PaintCtx, data: &EditorState, env: &Env) {
         let rect = (CANVAS_SIZE * data.session.viewport.zoom).to_rect();
-        ctx.fill(rect, &env.get(theme::GLYPH_LIST_BACKGROUND));
+        ctx.fill(rect, &env.get(theme::GROUND_3));
 
         draw::draw_session(
             ctx,
