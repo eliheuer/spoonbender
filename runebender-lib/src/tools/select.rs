@@ -213,17 +213,17 @@ impl Tool for Select {
 impl Select {
     fn nudge(&mut self, data: &mut EditSession, event: &KeyEvent) {
         let (mut nudge, edit_type) = match event.key {
-            KbKey::ArrowLeft => (Vec2::new(-1.0, 0.), EditType::NudgeLeft),
-            KbKey::ArrowRight => (Vec2::new(1.0, 0.), EditType::NudgeRight),
-            KbKey::ArrowUp => (Vec2::new(0.0, 1.0), EditType::NudgeUp),
-            KbKey::ArrowDown => (Vec2::new(0.0, -1.0), EditType::NudgeDown),
+            KbKey::ArrowLeft => (Vec2::new(-2.0, 0.), EditType::NudgeLeft),
+            KbKey::ArrowRight => (Vec2::new(2.0, 0.), EditType::NudgeRight),
+            KbKey::ArrowUp => (Vec2::new(0.0, 2.0), EditType::NudgeUp),
+            KbKey::ArrowDown => (Vec2::new(0.0, -2.0), EditType::NudgeDown),
             _ => unreachable!(),
         };
 
         if event.mods.meta() {
-            nudge *= 100.;
+            nudge *= 32.;
         } else if event.mods.shift() {
-            nudge *= 10.;
+            nudge *= 8.;
         }
 
         data.nudge_selection(DVec2::from_raw(nudge));
