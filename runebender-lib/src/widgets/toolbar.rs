@@ -61,7 +61,7 @@ impl Toolbar {
                     ctx.stroke(&icon, &env.get(theme::FOCUS_1), TOOLBAR_ITEM_STROKE_WIDTH);
                 } else {
                     //ctx.fill(frame, &env.get(theme::TOOLBAR_3));
-                    ctx.fill(&icon, &env.get(theme::TOOLBAR_4));
+                    ctx.fill(&icon, &env.get(theme::TOOLBAR_5));
                     ctx.stroke(&icon, &env.get(theme::TOOLBAR_1), TOOLBAR_ITEM_STROKE_WIDTH);
                 };
             });

@@ -19,7 +19,7 @@ TOOLBAR_1: #333333
 TOOLBAR_2: #666666
 TOOLBAR_3: #888888
 TOOLBAR_4: #999999
-TOOLBAR_5: #cccccc
+TOOLBAR_5: #aaaaaa
 
 FOCUS_1: #ff2211
 FOCUS_2: #ffaa11
@@ -36,16 +36,16 @@ GLYPH_GRID_CELL_BACKGROUND_COLOR:   #ffff22
 GLYPH_GRID_CELL_OUTLINE_COLOR:      #0000ff
 FOCUS_BACKGROUND_COLOR:             #ffee55
 FOCUS_OUTLINE_COLOR:                #ffaa11
-PRIMARY_TEXT_COLOR:                 #5577ff
-SECONDARY_TEXT_COLOR:               #7755ff
+PRIMARY_TEXT_COLOR:                 #222222
+SECONDARY_TEXT_COLOR:               #444444
 SELECTION_RECT_STROKE_COLOR:        #ff7700
 SELECTION_RECT_FILL_COLOR:          #ffaa11
 
 SELECTED_TEXT_BACKGROUND_COLOR: #a6ccff
-LABEL_COLOR:                    #2299ff
+LABEL_COLOR:                    #222222
 WINDOW_BACKGROUND_COLOR:        #ffaa00
-BACKGROUND_LIGHT:               #aa33ff
-CURSOR_COLOR:                   #33aaff
+BACKGROUND_LIGHT:               #cc99ff
+CURSOR_COLOR:                   #222222
 BUTTON_DARK:                    #ff33aa
 BUTTON_LIGHT:                   #aaff33
 
@@ -56,8 +56,8 @@ KNIFE_GUIDE_INTERSECTION:       #ff0000
 
 // drawing of paths and points in the editor
 
-PATH_STROKE_COLOR:              #0000ff
-PATH_FILL_COLOR:                #0000ff        // during preview
+PATH_STROKE_COLOR:              #222222
+PATH_FILL_COLOR:                #222222        // during preview
 METRICS_COLOR:                  #666666     // the color of the ascender/descender/em box
 
 GUIDE_COLOR:                    #fc5493
@@ -69,8 +69,8 @@ SMOOTH_POINT_OUTER_COLOR:       #4428ec
 SMOOTH_POINT_INNER_COLOR:       #579aff
 CORNER_POINT_OUTER_COLOR:       #208e56
 CORNER_POINT_INNER_COLOR:       #6ae756
-OFF_CURVE_POINT_OUTER_COLOR:    #ff2211
-OFF_CURVE_POINT_INNER_COLOR:    #ff9944
+OFF_CURVE_POINT_OUTER_COLOR:    #9900ff
+OFF_CURVE_POINT_INNER_COLOR:    #cc99ff
 OFF_CURVE_HANDLE_COLOR:         #0000ff
 DIRECTION_ARROW_COLOR:          #22aa33
 COMPONENT_FILL_COLOR:           #ff0033
