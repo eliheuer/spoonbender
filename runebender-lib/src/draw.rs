@@ -69,19 +69,19 @@ impl<'a, 'b: 'a> DrawCtx<'a, 'b> {
         let metrics_color = env.get(theme::METRICS_COLOR);
         let bounds = Rect::from_points((0., descender), (hadvance, ascender));
         let bounds = self.space.rect_to_screen(bounds);
-        self.stroke(bounds, &metrics_color, 1.0);
+        self.stroke(bounds, &metrics_color, 2.0);
 
         let baseline = Line::new((0.0, 0.0), (hadvance, 0.0));
         let baseline = self.space.affine() * baseline;
-        self.stroke(baseline, &metrics_color, 1.0);
+        self.stroke(baseline, &metrics_color, 2.0);
 
         let x_height_guide = Line::new((0.0, x_height), (hadvance, x_height));
         let x_height_guide = self.space.affine() * x_height_guide;
-        self.stroke(x_height_guide, &metrics_color, 1.0);
+        self.stroke(x_height_guide, &metrics_color, 2.0);
 
         let cap_height_guide = Line::new((0.0, cap_height), (hadvance, cap_height));
         let cap_height_guide = self.space.affine() * cap_height_guide;
-        self.stroke(cap_height_guide, &metrics_color, 1.0);
+        self.stroke(cap_height_guide, &metrics_color, 2.0);
     }
 
     fn draw_grid(&mut self) {
@@ -176,7 +176,7 @@ impl<'a, 'b: 'a> DrawCtx<'a, 'b> {
 
     fn draw_path(&mut self, bez: &BezPath) {
         let path_color = self.env.get(theme::PATH_STROKE_COLOR);
-        self.stroke(bez, &path_color, 1.0);
+        self.stroke(bez, &path_color, 2.0);  // Increased stroke width to 2.0
     }
 
     fn draw_filled(&mut self, session: &EditSession, font: &Workspace) {

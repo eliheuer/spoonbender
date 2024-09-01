@@ -12,9 +12,9 @@ use crate::tools::ToolId;
 
 // TODO: move these to theme
 const TOOLBAR_ITEM_SIZE: Size = Size::new(64.0, 64.0);
-const TOOLBAR_ITEM_PADDING: f64 = 0.0;
-const TOOLBAR_ICON_PADDING: f64 = 8.0;
-const TOOLBAR_BORDER_STROKE_WIDTH: f64 = 1.5;
+const TOOLBAR_ITEM_PADDING: f64 = 0.0; // Not sure why anyone would use this, but it's here if they want it
+const TOOLBAR_ICON_PADDING: f64 = 10.0;
+const TOOLBAR_BORDER_STROKE_WIDTH: f64 = 2.0;
 const TOOLBAR_ITEM_STROKE_WIDTH: f64 = 1.25;
 //const TOOLBAR_BG_DEFAULT: Color = Color::grey8(0x00);
 //const TOOLBAR_BG_SELECTED: Color = Color::rgb8(0xff, 0xaa, 0x11);
@@ -51,18 +51,18 @@ impl Toolbar {
                     env.get(theme::FOCUS_3)
                 } else {
                     // Toolbar BG default
-                    env.get(theme::TOOLBAR_2)
+                    env.get(theme::TOOLBAR_3)
                 };
                 let frame = ctx.size().to_rect();
                 ctx.fill(frame, &color);
                 if *is_selected {
                     //ctx.fill(frame, &env.get(theme::TOOLBAR_1));
-                    ctx.fill(&icon, &env.get(theme::TOOLBAR_1));
-                    ctx.stroke(&icon, &env.get(theme::TOOLBAR_2), TOOLBAR_ITEM_STROKE_WIDTH);
+                    ctx.fill(&icon, &env.get(theme::FOCUS_2));
+                    ctx.stroke(&icon, &env.get(theme::FOCUS_1), TOOLBAR_ITEM_STROKE_WIDTH);
                 } else {
                     //ctx.fill(frame, &env.get(theme::TOOLBAR_3));
-                    ctx.fill(&icon, &env.get(theme::TOOLBAR_3));
-                    ctx.stroke(&icon, &env.get(theme::TOOLBAR_4), TOOLBAR_ITEM_STROKE_WIDTH);
+                    ctx.fill(&icon, &env.get(theme::TOOLBAR_4));
+                    ctx.stroke(&icon, &env.get(theme::TOOLBAR_1), TOOLBAR_ITEM_STROKE_WIDTH);
                 };
             });
 
@@ -157,7 +157,7 @@ impl<T: Data> Widget<T> for Toolbar {
                 (child_frame.min_x() - stroke_inset, child_frame.max_y()),
             );
             //ctx.stroke(line, &Color::WHITE, TOOLBAR_BORDER_STROKE_WIDTH);
-            ctx.stroke(line, &env.get(theme::TOOLBAR_4), TOOLBAR_BORDER_STROKE_WIDTH);
+            ctx.stroke(line, &env.get(theme::TOOLBAR_1), TOOLBAR_BORDER_STROKE_WIDTH);
         }
     }
 }
@@ -215,7 +215,7 @@ impl<T: Data, W: Widget<T>> Widget<T> for FloatingPanel<W> {
             self.inner.paint(ctx, data, env);
         });
         //ctx.stroke(rounded, &Color::WHITE, TOOLBAR_BORDER_STROKE_WIDTH);
-        ctx.stroke(rounded, &env.get(theme::TOOLBAR_4), TOOLBAR_BORDER_STROKE_WIDTH);
+        ctx.stroke(rounded, &env.get(theme::TOOLBAR_1), TOOLBAR_BORDER_STROKE_WIDTH);
     }
 }
 
