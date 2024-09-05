@@ -8,7 +8,7 @@ use crate::data::EditorState;
 const MIN_ZOOM: f64 = 0.02;
 const MAX_ZOOM: f64 = 50.;
 /// mouse wheel deltas are big, so we scale them down
-const ZOOM_SCALE: f64 = 0.001;
+const ZOOM_SCALE: f64 = 0.01;
 
 /// A widget that wraps a scroll widget, adding zoom.
 pub struct ScrollZoom<T: Widget<EditorState>> {
