@@ -131,18 +131,18 @@ impl Tool for Select {
             MouseState::Drag(drag_state) => match drag_state {
                 DragState::Select { rect, .. } => {
                     ctx.fill(rect, &env.get(theme::SELECTION_RECT_FILL_COLOR));
-                    ctx.stroke(rect, &selection_stroke, 1.0);
+                    ctx.stroke(rect, &selection_stroke, 2.0);
                 }
                 // draw the selection bounding box
                 DragState::TransformSelection { pre_paths, .. } => {
                     ctx.stroke(
                         data.viewport.affine() * pre_paths,
                         &env.get(theme::PLACEHOLDER_GLYPH_COLOR),
-                        1.0,
+                        2.0,
                     );
                     let bbox = data.viewport.rect_to_screen(data.selection_dpoint_bbox());
                     let style = StrokeStyle::new().dash(vec![2.0, 4.0], 0.0);
-                    ctx.stroke_styled(&bbox, &selection_stroke, 0.5, &style);
+                    ctx.stroke_styled(&bbox, &selection_stroke, 2.0, &style);
 
                     for (_loc, circle) in iter_handle_circles(data) {
                         //FIXME: we don't fill while dragging because we would
@@ -151,7 +151,7 @@ impl Tool for Select {
                         //if loc == *quadrant {
                         //ctx.fill(circle, &selection_stroke);
                         //}
-                        ctx.stroke(circle, &selection_stroke, 0.5);
+                        ctx.stroke(circle, &selection_stroke, 2.0);
                     }
                 }
                 _ => (),
@@ -221,9 +221,9 @@ impl Select {
         };
 
         if event.mods.meta() {
-            nudge *= 32.;
-        } else if event.mods.shift() {
             nudge *= 8.;
+        } else if event.mods.shift() {
+            nudge *= 4.;
         }
 
         data.nudge_selection(DVec2::from_raw(nudge));

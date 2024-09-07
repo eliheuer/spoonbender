@@ -96,7 +96,7 @@ impl<'a, 'b: 'a> DrawCtx<'a, 'b> {
         // Calculate grid fade based on zoom level
         //let grid_fade = (self.space.zoom / 10.0).min(1.0).max(0.05);
         let grid_fade = (self.space.zoom / 1.0).min(0.3).max(0.001); // Adjusted max and min values
-                                                                     // Use FIGURE_1 for a lighter shade
+        // Use FIGURE_1 for a lighter shade
         let grid_color = self.env.get(theme::FIGURE_1).with_alpha(grid_fade);
 
         let visible_width = self.visible_rect.width() / self.space.zoom;
@@ -115,9 +115,7 @@ impl<'a, 'b: 'a> DrawCtx<'a, 'b> {
         for i in 0..=grid_lines {
             let off = i as f64 * grid_spacing;
             let xmin = self.space.to_screen((x1 + off, y1));
-            let xmax = self
-                .space
-                .to_screen((x1 + off, y1 - visible_height - 2.0 * grid_spacing));
+            let xmax = self.space.to_screen((x1 + off, y1 - visible_height - 2.0 * grid_spacing));
             let ymin = self.space.to_screen((x1, y1 - off)).round();
             let ymax = self.space.to_screen((x1 + len, y1 - off)).round();
             self.stroke(Line::new(xmin, xmax), &grid_color, 0.5);
@@ -178,7 +176,7 @@ impl<'a, 'b: 'a> DrawCtx<'a, 'b> {
 
     fn draw_path(&mut self, bez: &BezPath) {
         let path_color = self.env.get(theme::PATH_STROKE_COLOR);
-        self.stroke(bez, &path_color, 2.0); // Increased stroke width to 2.0
+        self.stroke(bez, &path_color, 2.0);  // Increased stroke width to 2.0
     }
 
     fn draw_filled(&mut self, session: &EditSession, font: &Workspace) {
