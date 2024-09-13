@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="alefMadda-ar" format="2">
+	<unicode hex="0622"/>
+	<advance width="272"/>
+	<outline>
+		<component base="alef-ar"/>
+		<component base="madda-ar" xOffset="-20" yOffset="224"/>
+	</outline>
+	<lib>
+		<dict>
+			<key>com.schriftgestaltung.Glyphs.lastChange</key>
+			<string>2024-08-10 04:50:24 +0000</string>
+			<key>public.markColor</key>
+			<string>0.67,0.95,0.38,1</string>
+		</dict>
+	</lib>
+</glyph>

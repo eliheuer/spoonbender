@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="teh-ar" format="2">
+	<unicode hex="062A"/>
+	<advance width="1024"/>
+	<outline>
+		<component base="behDotless-ar"/>
+		<component base="twodotshorizontalabove-ar" xOffset="372" yOffset="-312"/>
+	</outline>
+	<lib>
+		<dict>
+			<key>com.schriftgestaltung.Glyphs.lastChange</key>
+			<string>2024-07-13 02:46:29 +0000</string>
+			<key>public.markColor</key>
+			<string>0.67,0.95,0.38,1</string>
+		</dict>
+	</lib>
+</glyph>

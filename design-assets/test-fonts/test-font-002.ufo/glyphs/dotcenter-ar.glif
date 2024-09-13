@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="dotcenter-ar" format="2">
+	<advance width="300"/>
+	<outline>
+		<contour>
+			<point x="144" y="136" type="curve"/>
+			<point x="160" y="136" type="line"/>
+			<point x="180" y="172"/>
+			<point x="240" y="232"/>
+			<point x="276" y="252" type="curve"/>
+			<point x="276" y="268" type="line"/>
+			<point x="240" y="288"/>
+			<point x="180" y="348"/>
+			<point x="160" y="384" type="curve"/>
+			<point x="144" y="384" type="line"/>
+			<point x="124" y="348"/>
+			<point x="64" y="288"/>
+			<point x="28" y="268" type="curve"/>
+			<point x="28" y="252" type="line"/>
+			<point x="64" y="232"/>
+			<point x="124" y="172"/>
+		</contour>
+	</outline>
+	<anchor name="_center" x="152" y="256"/>
+	<lib>
+		<dict>
+			<key>com.schriftgestaltung.Glyphs.lastChange</key>
+			<string>2024-08-08 00:05:42 +0000</string>
+			<key>public.markColor</key>
+			<string>0.75,0.75,0.75,1</string>
+		</dict>
+	</lib>
+</glyph>

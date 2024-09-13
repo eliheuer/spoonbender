@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="dieresiscomb.case" format="2">
+	<advance width="328"/>
+	<outline>
+		<contour>
+			<point x="16" y="848" type="line"/>
+			<point x="128" y="848" type="line"/>
+			<point x="144" y="864" type="line"/>
+			<point x="144" y="976" type="line"/>
+			<point x="128" y="992" type="line"/>
+			<point x="16" y="992" type="line"/>
+			<point x="0" y="976" type="line"/>
+			<point x="0" y="864" type="line"/>
+		</contour>
+		<contour>
+			<point x="208" y="848" type="line"/>
+			<point x="320" y="848" type="line"/>
+			<point x="336" y="864" type="line"/>
+			<point x="336" y="976" type="line"/>
+			<point x="320" y="992" type="line"/>
+			<point x="208" y="992" type="line"/>
+			<point x="192" y="976" type="line"/>
+			<point x="192" y="864" type="line"/>
+		</contour>
+	</outline>
+	<anchor name="_top" x="168" y="800"/>
+	<anchor name="top" x="168" y="932"/>
+	<lib>
+		<dict>
+			<key>com.schriftgestaltung.Glyphs.lastChange</key>
+			<string>2024-07-31 02:05:49 +0000</string>
+			<key>public.markColor</key>
+			<string>0.75,0.75,0.75,1</string>
+		</dict>
+	</lib>
+</glyph>

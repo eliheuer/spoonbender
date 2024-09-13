@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="guilsinglleft" format="2">
+	<unicode hex="2039"/>
+	<advance width="320"/>
+	<outline>
+		<contour>
+			<point x="248" y="348" type="line"/>
+			<point x="256" y="364" type="line"/>
+			<point x="256" y="480" type="line"/>
+			<point x="240" y="496" type="line"/>
+			<point x="224" y="496" type="line"/>
+			<point x="72" y="372" type="line"/>
+			<point x="64" y="356" type="line"/>
+			<point x="64" y="204" type="line"/>
+			<point x="72" y="188" type="line"/>
+			<point x="224" y="60" type="line"/>
+			<point x="240" y="60" type="line"/>
+			<point x="256" y="76" type="line"/>
+			<point x="256" y="188" type="line"/>
+			<point x="248" y="204" type="line"/>
+			<point x="164" y="268" type="line"/>
+			<point x="164" y="284" type="line"/>
+		</contour>
+	</outline>
+	<lib>
+		<dict>
+			<key>com.schriftgestaltung.Glyphs.lastChange</key>
+			<string>2024-07-31 03:11:53 +0000</string>
+			<key>public.markColor</key>
+			<string>0.04,0.57,0.04,1</string>
+		</dict>
+	</lib>
+</glyph>

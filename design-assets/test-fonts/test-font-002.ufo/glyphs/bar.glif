@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="bar" format="2">
+	<unicode hex="007C"/>
+	<advance width="240"/>
+	<outline>
+		<contour>
+			<point x="80" y="-156" type="line"/>
+			<point x="160" y="-156" type="line"/>
+			<point x="176" y="-140" type="line"/>
+			<point x="176" y="832" type="line"/>
+			<point x="160" y="848" type="line"/>
+			<point x="80" y="848" type="line"/>
+			<point x="64" y="832" type="line"/>
+			<point x="64" y="-140" type="line"/>
+		</contour>
+	</outline>
+	<lib>
+		<dict>
+			<key>com.schriftgestaltung.Glyphs.lastChange</key>
+			<string>2024-07-30 18:44:29 +0000</string>
+			<key>public.markColor</key>
+			<string>0.04,0.57,0.04,1</string>
+		</dict>
+	</lib>
+</glyph>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="lslash" format="2">
+	<unicode hex="0142"/>
+	<advance width="376"/>
+	<outline>
+		<contour>
+			<point x="112" y="0" type="line"/>
+			<point x="264" y="0" type="line"/>
+			<point x="280" y="16" type="line"/>
+			<point x="280" y="412" type="line"/>
+			<point x="328" y="452" type="line"/>
+			<point x="344" y="468" type="line"/>
+			<point x="344" y="560" type="line"/>
+			<point x="328" y="576" type="line"/>
+			<point x="312" y="576" type="line"/>
+			<point x="280" y="548" type="line"/>
+			<point x="280" y="784" type="line"/>
+			<point x="264" y="800" type="line"/>
+			<point x="112" y="800" type="line"/>
+			<point x="96" y="784" type="line"/>
+			<point x="96" y="388" type="line"/>
+			<point x="48" y="344" type="line"/>
+			<point x="32" y="328" type="line"/>
+			<point x="32" y="240" type="line"/>
+			<point x="48" y="224" type="line"/>
+			<point x="64" y="224" type="line"/>
+			<point x="96" y="252" type="line"/>
+			<point x="96" y="16" type="line"/>
+		</contour>
+	</outline>
+	<lib>
+		<dict>
+			<key>com.schriftgestaltung.Glyphs.lastChange</key>
+			<string>2024-08-03 02:25:06 +0000</string>
+			<key>public.markColor</key>
+			<string>0.67,0.95,0.38,1</string>
+		</dict>
+	</lib>
+</glyph>

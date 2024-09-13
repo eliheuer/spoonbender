@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="alef-ar" format="2">
+	<unicode hex="0627"/>
+	<advance width="272"/>
+	<outline>
+		<contour>
+			<point x="64" y="0" type="line"/>
+			<point x="208" y="0" type="line"/>
+			<point x="224" y="16" type="line"/>
+			<point x="224" y="784" type="line"/>
+			<point x="208" y="800" type="line"/>
+			<point x="64" y="800" type="line"/>
+			<point x="48" y="784" type="line"/>
+			<point x="48" y="16" type="line"/>
+		</contour>
+	</outline>
+	<anchor name="bottom" x="136" y="0"/>
+	<anchor name="top" x="136" y="800"/>
+	<lib>
+		<dict>
+			<key>com.schriftgestaltung.Glyphs.lastChange</key>
+			<string>2024-07-12 20:37:08 +0000</string>
+			<key>public.markColor</key>
+			<string>0.04,0.57,0.04,1</string>
+		</dict>
+	</lib>
+</glyph>

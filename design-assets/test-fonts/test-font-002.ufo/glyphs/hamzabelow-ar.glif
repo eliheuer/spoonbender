@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="hamzabelow-ar" format="2">
+	<unicode hex="0655"/>
+	<advance width="300"/>
+	<outline>
+		<component base="hamzaabove-ar" yOffset="-928"/>
+	</outline>
+	<anchor name="_bottom" x="148" y="0"/>
+	<anchor name="bottom" x="148" y="-160"/>
+	<lib>
+		<dict>
+			<key>com.schriftgestaltung.Glyphs.lastChange</key>
+			<string>2024-08-11 00:34:01 +0000</string>
+			<key>public.markColor</key>
+			<string>0.75,0.75,0.75,1</string>
+		</dict>
+	</lib>
+</glyph>

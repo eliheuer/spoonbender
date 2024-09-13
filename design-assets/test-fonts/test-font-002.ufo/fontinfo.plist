@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>ascender</key>
+	<integer>832</integer>
+	<key>capHeight</key>
+	<integer>800</integer>
+	<key>descender</key>
+	<integer>-224</integer>
+	<key>familyName</key>
+	<string>Rena</string>
+	<key>guidelines</key>
+	<array>
+		<dict>
+			<key>x</key>
+			<real>-8</real>
+			<key>y</key>
+			<real>992</real>
+			<key>angle</key>
+			<real>0</real>
+		</dict>
+	</array>
+	<key>italicAngle</key>
+	<integer>0</integer>
+	<key>openTypeHeadCreated</key>
+	<string>2024/03/09 04:58:48</string>
+	<key>openTypeNamePreferredSubfamilyName</key>
+	<string>Bold Display</string>
+	<key>openTypeOS2WeightClass</key>
+	<integer>400</integer>
+	<key>openTypeOS2WidthClass</key>
+	<integer>5</integer>
+	<key>postscriptBlueValues</key>
+	<array>
+		<integer>-16</integer>
+		<integer>0</integer>
+		<integer>576</integer>
+		<integer>592</integer>
+		<integer>800</integer>
+		<integer>816</integer>
+		<integer>832</integer>
+		<integer>848</integer>
+	</array>
+	<key>postscriptFontName</key>
+	<string>Rena-BoldDisplay</string>
+	<key>postscriptOtherBlues</key>
+	<array>
+		<integer>-240</integer>
+		<integer>-224</integer>
+	</array>
+	<key>styleMapFamilyName</key>
+	<string>Rena Bold Display</string>
+	<key>styleMapStyleName</key>
+	<string>regular</string>
+	<key>styleName</key>
+	<string>Bold Display</string>
+	<key>unitsPerEm</key>
+	<integer>1024</integer>
+	<key>versionMajor</key>
+	<integer>1</integer>
+	<key>versionMinor</key>
+	<integer>0</integer>
+	<key>xHeight</key>
+	<integer>576</integer>
+</dict>
+</plist>

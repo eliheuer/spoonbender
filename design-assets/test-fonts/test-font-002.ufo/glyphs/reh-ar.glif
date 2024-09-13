@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="reh-ar" format="2">
+	<unicode hex="0631"/>
+	<advance width="368"/>
+	<outline>
+		<contour>
+			<point x="0" y="-328" type="line"/>
+			<point x="-16" y="-312" type="line"/>
+			<point x="-16" y="-144" type="line"/>
+			<point x="0" y="-128" type="line"/>
+			<point x="32" y="-128" type="line" smooth="yes"/>
+			<point x="128" y="-128"/>
+			<point x="160" y="-96"/>
+			<point x="160" y="0" type="curve" smooth="yes"/>
+			<point x="160" y="416" type="line"/>
+			<point x="176" y="432" type="line"/>
+			<point x="320" y="432" type="line"/>
+			<point x="336" y="416" type="line"/>
+			<point x="336" y="-104" type="line" smooth="yes"/>
+			<point x="336" y="-272"/>
+			<point x="280" y="-328"/>
+			<point x="112" y="-328" type="curve" smooth="yes"/>
+		</contour>
+	</outline>
+	<anchor name="bottom" x="124" y="-224"/>
+	<anchor name="top" x="248" y="400"/>
+	<anchor name="topDots" x="248" y="432"/>
+	<lib>
+		<dict>
+			<key>com.schriftgestaltung.Glyphs.lastChange</key>
+			<string>2024-08-10 05:13:58 +0000</string>
+			<key>public.markColor</key>
+			<string>0.04,0.57,0.04,1</string>
+		</dict>
+	</lib>
+</glyph>

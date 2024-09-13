@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="lam_alef-ar" format="2">
+	<advance width="600"/>
+	<outline>
+		<contour>
+			<point x="64" y="0" type="line"/>
+			<point x="392" y="0" type="line"/>
+			<point x="408" y="16" type="line"/>
+			<point x="408" y="160" type="line"/>
+			<point x="328" y="264" type="line"/>
+			<point x="328" y="276" type="line"/>
+			<point x="408" y="428" type="line"/>
+			<point x="408" y="784" type="line"/>
+			<point x="392" y="800" type="line"/>
+			<point x="320" y="800" type="line"/>
+			<point x="304" y="784" type="line"/>
+			<point x="304" y="460" type="line"/>
+			<point x="232" y="360" type="line"/>
+			<point x="152" y="452" type="line"/>
+			<point x="152" y="784" type="line"/>
+			<point x="136" y="800" type="line"/>
+			<point x="64" y="800" type="line"/>
+			<point x="48" y="784" type="line"/>
+			<point x="48" y="404" type="line"/>
+			<point x="128" y="284" type="line"/>
+			<point x="128" y="268" type="line"/>
+			<point x="48" y="160" type="line"/>
+			<point x="48" y="16" type="line"/>
+		</contour>
+		<contour>
+			<point x="152" y="128" type="line"/>
+			<point x="152" y="164" type="line"/>
+			<point x="232" y="244" type="line"/>
+			<point x="304" y="164" type="line"/>
+			<point x="304" y="128" type="line"/>
+			<point x="288" y="112" type="line"/>
+			<point x="168" y="112" type="line"/>
+		</contour>
+	</outline>
+	<lib>
+		<dict>
+			<key>com.schriftgestaltung.Glyphs.lastChange</key>
+			<string>2024-08-10 05:05:08 +0000</string>
+		</dict>
+	</lib>
+</glyph>

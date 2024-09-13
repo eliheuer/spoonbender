@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="behDotless-ar" format="2">
+	<unicode hex="066E"/>
+	<advance width="1024"/>
+	<outline>
+		<contour>
+			<point x="272" y="0" type="line" smooth="yes"/>
+			<point x="96" y="0"/>
+			<point x="48" y="56"/>
+			<point x="48" y="232" type="curve" smooth="yes"/>
+			<point x="48" y="368" type="line"/>
+			<point x="64" y="384" type="line"/>
+			<point x="208" y="384" type="line"/>
+			<point x="224" y="368" type="line"/>
+			<point x="224" y="328" type="line" smooth="yes"/>
+			<point x="224" y="232"/>
+			<point x="256" y="200"/>
+			<point x="352" y="200" type="curve" smooth="yes"/>
+			<point x="672" y="200" type="line" smooth="yes"/>
+			<point x="768" y="200"/>
+			<point x="800" y="232"/>
+			<point x="800" y="328" type="curve" smooth="yes"/>
+			<point x="800" y="368" type="line"/>
+			<point x="816" y="384" type="line"/>
+			<point x="960" y="384" type="line"/>
+			<point x="976" y="368" type="line"/>
+			<point x="976" y="232" type="line" smooth="yes"/>
+			<point x="976" y="56"/>
+			<point x="928" y="0"/>
+			<point x="752" y="0" type="curve" smooth="yes"/>
+		</contour>
+	</outline>
+	<anchor name="bottom" x="520" y="0"/>
+	<anchor name="bottomDots" x="520" y="24"/>
+	<anchor name="top" x="532" y="520"/>
+	<anchor name="topDots" x="524" y="264"/>
+	<lib>
+		<dict>
+			<key>com.schriftgestaltung.Glyphs.lastChange</key>
+			<string>2024-07-13 02:31:47 +0000</string>
+			<key>public.markColor</key>
+			<string>0.04,0.57,0.04,1</string>
+		</dict>
+	</lib>
+</glyph>

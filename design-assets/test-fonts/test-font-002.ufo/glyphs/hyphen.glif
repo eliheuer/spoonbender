@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="hyphen" format="2">
+	<unicode hex="002D"/>
+	<advance width="404"/>
+	<outline>
+		<contour>
+			<point x="48" y="188" type="line"/>
+			<point x="356" y="188" type="line"/>
+			<point x="372" y="204" type="line"/>
+			<point x="372" y="328" type="line"/>
+			<point x="356" y="344" type="line"/>
+			<point x="48" y="344" type="line"/>
+			<point x="32" y="328" type="line"/>
+			<point x="32" y="204" type="line"/>
+		</contour>
+	</outline>
+	<lib>
+		<dict>
+			<key>com.schriftgestaltung.Glyphs.lastChange</key>
+			<string>2024-08-06 06:59:23 +0000</string>
+			<key>public.markColor</key>
+			<string>0.04,0.57,0.04,1</string>
+		</dict>
+	</lib>
+</glyph>

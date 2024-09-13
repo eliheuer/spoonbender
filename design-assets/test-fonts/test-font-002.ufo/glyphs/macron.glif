@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="macron" format="2">
+	<unicode hex="00AF"/>
+	<advance width="464"/>
+	<outline>
+		<contour>
+			<point x="48" y="648" type="line"/>
+			<point x="416" y="648" type="line"/>
+			<point x="432" y="664" type="line"/>
+			<point x="432" y="736" type="line"/>
+			<point x="416" y="752" type="line"/>
+			<point x="48" y="752" type="line"/>
+			<point x="32" y="736" type="line"/>
+			<point x="32" y="664" type="line"/>
+		</contour>
+	</outline>
+	<lib>
+		<dict>
+			<key>com.schriftgestaltung.Glyphs.lastChange</key>
+			<string>2024-07-31 16:38:54 +0000</string>
+			<key>public.markColor</key>
+			<string>0.75,0.75,0.75,1</string>
+		</dict>
+	</lib>
+</glyph>

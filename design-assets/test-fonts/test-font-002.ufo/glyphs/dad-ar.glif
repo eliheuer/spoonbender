@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="dad-ar" format="2">
+	<unicode hex="0636"/>
+	<advance width="600"/>
+	<outline>
+	</outline>
+	<lib>
+		<dict>
+			<key>com.schriftgestaltung.Glyphs.lastChange</key>
+			<string>2024-07-11 21:51:43 +0000</string>
+		</dict>
+	</lib>
+</glyph>

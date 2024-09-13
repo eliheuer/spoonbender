@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="asterisk" format="2">
+	<unicode hex="002A"/>
+	<advance width="476"/>
+	<outline>
+		<contour>
+			<point x="32" y="628" type="line"/>
+			<point x="40" y="612" type="line"/>
+			<point x="160" y="576" type="line"/>
+			<point x="84" y="472" type="line"/>
+			<point x="84" y="456" type="line"/>
+			<point x="148" y="404" type="line"/>
+			<point x="164" y="404" type="line"/>
+			<point x="232" y="516" type="line"/>
+			<point x="248" y="516" type="line"/>
+			<point x="316" y="404" type="line"/>
+			<point x="332" y="404" type="line"/>
+			<point x="396" y="456" type="line"/>
+			<point x="396" y="472" type="line"/>
+			<point x="320" y="576" type="line"/>
+			<point x="436" y="612" type="line"/>
+			<point x="444" y="628" type="line"/>
+			<point x="420" y="692" type="line"/>
+			<point x="404" y="700" type="line"/>
+			<point x="296" y="664" type="line"/>
+			<point x="296" y="784" type="line"/>
+			<point x="280" y="800" type="line"/>
+			<point x="200" y="800" type="line"/>
+			<point x="184" y="784" type="line"/>
+			<point x="184" y="664" type="line"/>
+			<point x="72" y="700" type="line"/>
+			<point x="56" y="692" type="line"/>
+		</contour>
+	</outline>
+	<lib>
+		<dict>
+			<key>com.schriftgestaltung.Glyphs.lastChange</key>
+			<string>2024-08-02 03:22:02 +0000</string>
+			<key>public.markColor</key>
+			<string>0.04,0.57,0.04,1</string>
+		</dict>
+	</lib>
+</glyph>

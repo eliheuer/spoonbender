@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="waw-ar" format="2">
+	<unicode hex="0648"/>
+	<advance width="600"/>
+	<outline>
+		<contour>
+			<point x="320" y="112" type="line"/>
+			<point x="328" y="120" type="line"/>
+			<point x="328" y="220" type="line" smooth="yes"/>
+			<point x="328" y="284"/>
+			<point x="300" y="320"/>
+			<point x="236" y="320" type="curve" smooth="yes"/>
+			<point x="172" y="320"/>
+			<point x="136" y="284"/>
+			<point x="136" y="220" type="curve" smooth="yes"/>
+			<point x="136" y="144"/>
+			<point x="172" y="112"/>
+			<point x="236" y="112" type="curve" smooth="yes"/>
+		</contour>
+		<contour>
+			<point x="236" y="-224" type="curve" smooth="yes"/>
+			<point x="48" y="-224" type="line"/>
+			<point x="32" y="-208" type="line"/>
+			<point x="32" y="-128" type="line"/>
+			<point x="48" y="-112" type="line"/>
+			<point x="236" y="-112" type="line" smooth="yes"/>
+			<point x="300" y="-112"/>
+			<point x="328" y="-68"/>
+			<point x="328" y="-24" type="curve" smooth="yes"/>
+			<point x="328" y="-8" type="line"/>
+			<point x="320" y="0" type="line"/>
+			<point x="236" y="0" type="line" smooth="yes"/>
+			<point x="80" y="0"/>
+			<point x="32" y="96"/>
+			<point x="32" y="220" type="curve" smooth="yes"/>
+			<point x="32" y="348"/>
+			<point x="108" y="432"/>
+			<point x="236" y="432" type="curve" smooth="yes"/>
+			<point x="364" y="432"/>
+			<point x="432" y="348"/>
+			<point x="432" y="228" type="curve" smooth="yes"/>
+			<point x="432" y="-40" type="line" smooth="yes"/>
+			<point x="432" y="-160"/>
+			<point x="364" y="-224"/>
+		</contour>
+	</outline>
+	<lib>
+		<dict>
+			<key>com.schriftgestaltung.Glyphs.lastChange</key>
+			<string>2024-08-09 22:01:46 +0000</string>
+		</dict>
+	</lib>
+</glyph>

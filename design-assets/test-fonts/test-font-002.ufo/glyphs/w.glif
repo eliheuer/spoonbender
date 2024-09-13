@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="w" format="2">
+	<unicode hex="0077"/>
+	<advance width="868"/>
+	<outline>
+		<contour>
+			<point x="172" y="0" type="line"/>
+			<point x="328" y="0" type="line"/>
+			<point x="344" y="16" type="line"/>
+			<point x="428" y="348" type="line"/>
+			<point x="436" y="348" type="line"/>
+			<point x="520" y="16" type="line"/>
+			<point x="536" y="0" type="line"/>
+			<point x="692" y="0" type="line"/>
+			<point x="708" y="16" type="line"/>
+			<point x="852" y="496" type="line"/>
+			<point x="852" y="560" type="line"/>
+			<point x="836" y="576" type="line"/>
+			<point x="700" y="576" type="line"/>
+			<point x="684" y="560" type="line"/>
+			<point x="602" y="236" type="line"/>
+			<point x="594" y="236" type="line"/>
+			<point x="516" y="560" type="line"/>
+			<point x="500" y="576" type="line"/>
+			<point x="364" y="576" type="line"/>
+			<point x="348" y="560" type="line"/>
+			<point x="270" y="236" type="line"/>
+			<point x="262" y="236" type="line"/>
+			<point x="184" y="560" type="line"/>
+			<point x="168" y="576" type="line"/>
+			<point x="32" y="576" type="line"/>
+			<point x="16" y="560" type="line"/>
+			<point x="16" y="496" type="line"/>
+			<point x="156" y="16" type="line"/>
+		</contour>
+	</outline>
+	<anchor name="bottom" x="436" y="0"/>
+	<anchor name="top" x="436" y="576"/>
+	<lib>
+		<dict>
+			<key>com.schriftgestaltung.Glyphs.lastChange</key>
+			<string>2024-08-16 03:42:35 +0000</string>
+			<key>public.markColor</key>
+			<string>0.04,0.57,0.04,1</string>
+		</dict>
+	</lib>
+</glyph>
