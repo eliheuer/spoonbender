@@ -91,9 +91,9 @@ impl Widget<Quadrant> for CoordRepresentationPicker {
     fn paint(&mut self, ctx: &mut PaintCtx, data: &Quadrant, env: &Env) {
         let frame_size = ctx.size();
         let padding = 8.0;
-        let circle_radius = 6.0;
+        let circle_radius = 8.0;
         let rect = frame_size.to_rect().inset(-padding);
-        ctx.stroke(rect, &Color::WHITE, 1.0);
+        ctx.stroke(rect, &env.get(theme::FIGURE_3), 2.0);
         for quadrant in Quadrant::all() {
             let pt = quadrant.point_in_rect(rect);
             let color = if data == quadrant {
@@ -101,9 +101,9 @@ impl Widget<Quadrant> for CoordRepresentationPicker {
             } else {
                 env.get(theme::OFF_CURVE_POINT_INNER_COLOR)
             };
-            let stroke_color = env.get(theme::PATH_FILL_COLOR);
+            let stroke_color = env.get(theme::FIGURE_3);
             ctx.fill(Circle::new(pt, circle_radius), &color);
-            ctx.stroke(Circle::new(pt, circle_radius), &stroke_color, 1.0);
+            ctx.stroke(Circle::new(pt, circle_radius), &stroke_color, 2.0);
         }
     }
 }
@@ -121,7 +121,7 @@ fn build_widget() -> impl Widget<CoordinateSelection> {
         CoordRepresentationPicker
             .lens(CoordinateSelection::quadrant)
             .fix_width(64.0)
-            .padding((0., 0., 8.0, 0.)),
+            .padding((0., 0., 16.0, 0.)),
         SizedBox::empty(),
     );
 
@@ -219,7 +219,7 @@ fn build_widget() -> impl Widget<CoordinateSelection> {
         .with_child(coord_picker)
         .with_child(coord_editor)
         .with_child(bbox_info)
-        .padding(8.0);
+        .padding(16.0);
 
     // if we have any points selected, show the numerical adjust widget, else an empty widget
     Either::new(|d, _| d.count != 0, picker_and_editor, SizedBox::empty())

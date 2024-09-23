@@ -41,7 +41,7 @@ SECONDARY_TEXT_COLOR:               #444444
 SELECTION_RECT_STROKE_COLOR:        #ff7700
 SELECTION_RECT_FILL_COLOR:          #ffaa1177
 
-SELECTED_TEXT_BACKGROUND_COLOR: #a6ccff
+SELECTED_TEXT_BACKGROUND_COLOR: #ffee55
 LABEL_COLOR:                    #222222
 WINDOW_BACKGROUND_COLOR:        #ffaa00
 BACKGROUND_LIGHT:               #ccaaff
@@ -57,13 +57,13 @@ KNIFE_GUIDE_INTERSECTION:       #ff0000
 // drawing of paths and points in the editor
 
 PATH_STROKE_COLOR:              #222222
-PATH_FILL_COLOR:                #222222        // during preview
+PATH_FILL_COLOR:                #222222     // during preview
 METRICS_COLOR:                  #666666     // the color of the ascender/descender/em box
 
 GUIDE_COLOR:                    #fc5493
 SELECTED_GUIDE_COLOR:           #fecdcd
 SELECTED_LINE_SEGMENT_COLOR:    #93c6f4
-SELECTED_POINT_INNER_COLOR:     #fe59
+SELECTED_POINT_INNER_COLOR:     #fe5
 SELECTED_POINT_OUTER_COLOR:     #fa1
 SMOOTH_POINT_OUTER_COLOR:       #4428ec
 SMOOTH_POINT_INNER_COLOR:       #579aff
