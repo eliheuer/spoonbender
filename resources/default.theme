@@ -44,7 +44,7 @@ SELECTION_RECT_FILL_COLOR:          #ffaa1177
 SELECTED_TEXT_BACKGROUND_COLOR: #a6ccff
 LABEL_COLOR:                    #222222
 WINDOW_BACKGROUND_COLOR:        #ffaa00
-BACKGROUND_LIGHT:               #cc99ff
+BACKGROUND_LIGHT:               #ccaaff
 CURSOR_COLOR:                   #222222
 BUTTON_DARK:                    #ff33aa
 BUTTON_LIGHT:                   #aaff33
