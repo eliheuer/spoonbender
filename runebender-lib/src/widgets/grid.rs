@@ -15,7 +15,7 @@ use crate::data::{GridGlyph, Workspace};
 use crate::theme;
 use crate::widgets::Maybe;
 
-const GLYPH_SIZE: f64 = 169.;
+const GLYPH_SIZE: f64 = 157.;
 
 #[derive(Default)]
 pub struct GlyphGrid {
@@ -57,7 +57,7 @@ impl Widget<Workspace> for GlyphGrid {
         env: &Env,
     ) -> Size {
         let available_width = bc.max().width;
-        let cell_margin = 4.0; // Add this line to define the margin
+        let cell_margin = 8.0; // Add this line to define the margin
         let cell_size = GLYPH_SIZE + cell_margin; // Modify this line
         let width = (available_width / cell_size).floor() * cell_size;
         let mut x: f64 = 0.;
@@ -149,10 +149,10 @@ impl Widget<GridGlyph> for GridInner {
         let geom = ctx.size().to_rect();
         // Increase padding by adjusting this value (e.g., from 0.55 to 0.5)
         let scale = geom.height() as f64 / data.upm;
-        let scale = scale * 0.35; // Reduced from 0.55 to add more padding
+        let scale = scale * 0.6; // Reduced from 0.55 to add more padding
         let scaled_width = bb.width() * scale as f64;
-        let l_pad = ((geom.width() as f64 - scaled_width) / 2.).round();
-        let baseline = (geom.height() * 0.37) as f64;
+        let l_pad = ((geom.width() as f64 - scaled_width) / 2.25).round();
+        let baseline = (geom.height() * 0.3) as f64;
         let affine = Affine::new([
             scale as f64,
             0.0,
