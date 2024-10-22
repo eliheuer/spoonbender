@@ -3,7 +3,8 @@
 
 use druid::kurbo::Circle;
 use druid::widget::{prelude::*, Controller, CrossAxisAlignment, Either, Flex, Label, SizedBox};
-use druid::{Color, FontDescriptor, FontFamily, Point, WidgetExt};
+//use druid::{Color, FontDescriptor, FontFamily, Point, WidgetExt};
+use druid::{FontDescriptor, FontFamily, Point, WidgetExt};
 
 use crate::design_space::{DPoint, DVec2};
 use crate::edit_session::CoordinateSelection;
