@@ -1,75 +1,83 @@
-// A dark theme file
+// The dark Spoonbender theme file
+// this theme file uses a new design system that is not compatable with upstream Runebender
 // these are comments; blank lines are ignored
 
-SIDEBAR_BACKGROUND:                 #222
-SIDEBAR_EDGE_STROKE:                #333
-PLACEHOLDER_GLYPH_COLOR:            #aaa
-GLYPH_LIST_STROKE:                  #fff
-GLYPH_LIST_BACKGROUND:              #111
-GLYPH_GRID_CELL_BACKGROUND_COLOR:   #222
-GLYPH_GRID_CELL_OUTLINE_COLOR:      #444
-FOCUS_BACKGROUND_COLOR:             #000
-FOCUS_OUTLINE_COLOR:                #ffb52a
-PRIMARY_TEXT_COLOR:                 #fff
-SECONDARY_TEXT_COLOR:               #222
-SELECTION_RECT_STROKE_COLOR:        #0f2
-SELECTION_RECT_FILL_COLOR:          #0f25
+FIGURE_1: #ffffff
+FIGURE_2: #eeeeee
+FIGURE_3: #dddddd
+FIGURE_4: #cccccc
+FIGURE_5: #bbbbbb
 
-SELECTED_TEXT_BACKGROUND_COLOR: #a6ccff
-LABEL_COLOR:                    #05f
-WINDOW_BACKGROUND_COLOR:        #fff
-BACKGROUND_LIGHT:               #eee
-CURSOR_COLOR:                   #000
-BUTTON_DARK:                    #c8c8c8
-BUTTON_LIGHT:                   #fff
+GROUND_0: #111111
+GROUND_1: #222222
+GROUND_2: #333333
+GROUND_3: #444444
+GROUND_4: #555555
+GROUND_5: #666666
+
+TOOLBAR_1: #111111
+TOOLBAR_2: #222222
+TOOLBAR_3: #333333
+TOOLBAR_4: #444444
+TOOLBAR_5: #555555
+
+FOCUS_1: #ff3322
+FOCUS_2: #ff9933
+FOCUS_3: #ffdd44
+FOCUS_4: #66dd44
+FOCUS_5: #22aa55
+
+SIDEBAR_BACKGROUND:                 #1a1a1a
+SIDEBAR_EDGE_STROKE:                #444444
+PLACEHOLDER_GLYPH_COLOR:            #555555
+GLYPH_LIST_STROKE:                  #666666
+GLYPH_LIST_BACKGROUND:              #222222
+GLYPH_GRID_CELL_BACKGROUND_COLOR:   #333333
+GLYPH_GRID_CELL_OUTLINE_COLOR:      #555555
+FOCUS_BACKGROUND_COLOR:             #444444
+FOCUS_OUTLINE_COLOR:                #ff9933
+PRIMARY_TEXT_COLOR:                 #ffffff
+SECONDARY_TEXT_COLOR:               #cccccc
+SELECTION_RECT_STROKE_COLOR:        #ff9933
+SELECTION_RECT_FILL_COLOR:          #ff993355
+
+SELECTED_TEXT_BACKGROUND_COLOR: #444444
+LABEL_COLOR:                    #ffffff
+WINDOW_BACKGROUND_COLOR:        #111111
+BACKGROUND_LIGHT:               #222222
+CURSOR_COLOR:                   #ffffff
+BUTTON_DARK:                    #333333
+BUTTON_LIGHT:                   #555555
 
 // tools
-KNIFE_GUIDE:                    #0f2
-KNIFE_GUIDE_INTERSECTION:       #f00
+
+KNIFE_GUIDE:                    #22aa55
+KNIFE_GUIDE_INTERSECTION:       #ff3322
 
 // drawing of paths and points in the editor
 
-PATH_STROKE_COLOR:              #fff
-PATH_FILL_COLOR:                #fff    // during preview
-METRICS_COLOR:                  #777    // the color of the ascender/descender/em box
-
-
-GUIDE_COLOR:                    #fc5493
-SELECTED_GUIDE_COLOR:           #ffee55
-SELECTED_LINE_SEGMENT_COLOR:    #ffee55
-SELECTED_POINT_INNER_COLOR:     #ffaa11
-SELECTED_POINT_OUTER_COLOR:     #ffee55
-
+PATH_STROKE_COLOR:              #ffffff
+PATH_FILL_COLOR:                #ffffff     // during preview
+METRICS_COLOR:                  #888888     // the color of the ascender/descender/em box
 
 GUIDE_COLOR:                    #fc5493
-SELECTED_GUIDE_COLOR:           #ffee55
-SELECTED_LINE_SEGMENT_COLOR:    #ffee55
-SELECTED_POINT_INNER_COLOR:     #ffaa11
-SELECTED_POINT_OUTER_COLOR:     #ffee55
+SELECTED_GUIDE_COLOR:           #fecdcd
+SELECTED_LINE_SEGMENT_COLOR:    #93c6f4
+SELECTED_POINT_INNER_COLOR:     #ffee55
+SELECTED_POINT_OUTER_COLOR:     #ffaa33
+SMOOTH_POINT_OUTER_COLOR:       #4428ec
+SMOOTH_POINT_INNER_COLOR:       #579aff
+CORNER_POINT_OUTER_COLOR:       #208e56
+CORNER_POINT_INNER_COLOR:       #6ae756
+OFF_CURVE_POINT_OUTER_COLOR:    #9900ff
+OFF_CURVE_POINT_INNER_COLOR:    #cc99ff
+OFF_CURVE_HANDLE_COLOR:         #3333ff
+DIRECTION_ARROW_COLOR:          #22aa55
+COMPONENT_FILL_COLOR:           #ff3333
 
-
-
-// SMOOTH_POINT_OUTER_COLOR:       #579aff
-// SMOOTH_POINT_INNER_COLOR:       #4428ec
-
-//SMOOTH_POINT_OUTER_COLOR:       #6ae756
-//SMOOTH_POINT_INNER_COLOR:       #208e56
-
-SMOOTH_POINT_OUTER_COLOR:       #09eb42
-SMOOTH_POINT_INNER_COLOR:       #09eb4244
-
-CORNER_POINT_OUTER_COLOR:       #6ae756
-CORNER_POINT_INNER_COLOR:       #208e56
-
-OFF_CURVE_POINT_OUTER_COLOR:    #bb66ff
-OFF_CURVE_POINT_INNER_COLOR:    #000
-OFF_CURVE_HANDLE_COLOR:         #fff
-DIRECTION_ARROW_COLOR:          #6ae75699
-COMPONENT_FILL_COLOR:           #f004
-
-SMOOTH_RADIUS:                  5.5
-SMOOTH_SELECTED_RADIUS:         6.
-CORNER_RADIUS:                  6.5
-CORNER_SELECTED_RADIUS:         8.
-OFF_CURVE_RADIUS:               4.5
+SMOOTH_RADIUS:                  5.
+SMOOTH_SELECTED_RADIUS:         5.
+CORNER_RADIUS:                  5.
+CORNER_SELECTED_RADIUS:         5.
+OFF_CURVE_RADIUS:               5.
 OFF_CURVE_SELECTED_RADIUS:      5.
