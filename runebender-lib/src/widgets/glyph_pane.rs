@@ -64,7 +64,7 @@ fn build_widget() -> impl Widget<EditorState> {
                 .color(theme::FIGURE_3)
                 .frame_color(theme::FIGURE_4)
                 .draw_layout_frame(true)
-                .fix_height(384.0)
+                .fix_height(256.0)
                 .padding((4.0, 4.0))
                 .lens(EditorState::detail_glyph),
         )
