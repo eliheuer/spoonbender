@@ -85,7 +85,7 @@ impl<'a, 'b: 'a> DrawCtx<'a, 'b> {
     }
 
     fn draw_grid(&mut self) {
-        const GRID_SPACING: f64 = 8.0;
+        const GRID_SPACING: f64 = 16.0;
 
         let grid_spacing = if self.space.zoom < 1.0 {
             GRID_SPACING * (1.0 / self.space.zoom).ceil()
